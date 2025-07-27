@@ -12,4 +12,10 @@
 - Agent-Workflows validieren und testen
 - Definition of Done sicherstellen (Tests grün, Lint sauber)
 - Backlog offener Verbesserungen pflegen
-- Einfache Beispielmodule implementieren
+- Modul zur Suche nach Wort im Dateinamen entwickeln
+- Modul zur Textsuche in Dateien erstellen
+- Modul zum Auflisten bestimmter Dateitypen in Ordnern (optional rekursiv)
+- Modul zur Sortierung nach Dateikategorien wie Text oder Video
+- Eigene Kategorien definierbar machen
+- Modul zur Konvertierung von Mediendateien
+- Modul zur Anzeige von Aliasen und Tastenkombinationen

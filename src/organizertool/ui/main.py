@@ -11,7 +11,14 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtCore import Qt
 
-from .modules import BaseModule
+from .modules import (
+    BaseModule,
+    FileNameSearchModule,
+    TextSearchModule,
+    FileTypeSearchModule,
+    MediaConvertModule,
+    AliasInfoModule,
+)
 
 
 class MainWindow(QMainWindow):
@@ -49,6 +56,11 @@ class MainWindow(QMainWindow):
         modules = [
             BaseModule.create_dummy("Systemaufräumung"),
             BaseModule.create_dummy("Duplikatsuche"),
+            FileNameSearchModule.create(),
+            TextSearchModule.create(),
+            FileTypeSearchModule.create(),
+            MediaConvertModule.create(),
+            AliasInfoModule.create(),
         ]
         for mod in modules:
             self.central_layout.addWidget(mod.widget)
