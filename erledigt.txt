@@ -1,0 +1,13 @@
+- Grundlegendes GUI-Fenster mit Header-Dashboard und rechter Sidebar implementiert
+- Projektstruktur nach Core/Services/UI/CLI/Data aufteilen
+- Einfache Beispielmodule implementiert
+- Suchmodule f\u00fcr Dateinamen, Text und Dateitypen hinzugef\u00fcgt
+- Kategorie-Modul implementiert
+- Erste Services f\u00fcr asynchrone Dateisuche erstellt
+
+Hilfsfunktion ``iter_files`` eingeführt, um Dateidurchläufe zu vereinheitlichen
+Erste Pytest-Tests für Suchfunktionen erstellt
+
+GUI-Farben für bessere Sichtbarkeit angepasst
+Alias-Info-Modul mit realen Inhalten erstellt
+
