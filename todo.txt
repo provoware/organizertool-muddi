@@ -35,3 +35,29 @@
 - Für Entwickler: Anleitung in CONTRIBUTING.md lesen
 - Aktuelle Programmversion anzeigen: `python -c "import organizertool; print(organizertool.__version__)"`
 - Letzte Änderungen lesen: `cat CHANGELOG.md`
+- GUI auch per Python starten: 'python -c "import organizertool; organizertool.run_app()"'
+- Farbschema mit `export ORGANIZER_THEME=dark` wechseln (Theme=Farbvorlage).
+- Bei schmalem Fenster wird die Sidebar automatisch ausgeblendet
+- Theme im Programm über die Auswahlliste ändern und dauerhaft speichern
+- Schriftgröße anpassen: `export ORGANIZER_FONT_SIZE=14` oder in der GUI auswählen
+- Gespeicherte Einstellungen ansehen: `cat ~/.organizertool/settings.json`
+- Speicherort der Einstellungen anpassen: `export ORGANIZER_SETTINGS=/pfad/zur/datei.json`
+- Statusleiste zeigt unten Meldungen an (Statusbar).
+- Bei Fehlern hilft 'run_with_retry' (Retry = erneuter Versuch).
+- Bei Problemen mit Kategorien siehst du im Terminal eine Warnung
+- Datei sicher in den Papierkorb legen: python -c "from organizertool import safe_remove; safe_remove('datei.txt')"
+- GUI über die Kommandozeile starten: `python -m organizertool gui`
+- Dateien nach Namen suchen: `python -m organizertool search-name ORDNER wort`
+- Vor dem Release ein Paket bauen: `./scripts/build_package.sh`
+- Alternativ erstellt `python -m build` ebenfalls ein Installationspaket (build = Paket bauen).
+- Fertiges Paket findest du nach dem Build im Ordner `dist` ("dist" = Verteilsatz).
+- Hilfetexte anzeigen: `python -m organizertool tips`
+
+- Mit `./scripts/one_click_start.sh` richtest du automatisch eine virtuelle Umgebung ein und startest das Programm.
+- Umgebung prüfen: `python -m organizertool diagnose`
+- Python-Version anzeigen: `python --version`
+- Pakete überprüfen: `python -m pip check`
+- Barrierefreien Modus aktivieren:
+  export ORGANIZER_THEME=contrast
+  export ORGANIZER_FONT_SIZE=16
+  python -m organizertool gui
