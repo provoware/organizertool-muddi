@@ -123,8 +123,8 @@ def load_categories() -> Dict[str, List[str]]:
             data = json.load(f)
         if isinstance(data, dict):
             return {str(k): list(map(str, v)) for k, v in data.items()}
-    except Exception:
-        pass
+    except Exception as exc:
+        print(f"Warnung: Kategorien konnten nicht geladen werden: {exc}")
     return FILE_CATEGORIES
 
 

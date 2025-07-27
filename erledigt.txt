@@ -22,3 +22,4 @@ Alias-Info-Modul mit realen Inhalten erstellt
 - Theme-Auswahl wird gespeichert (settings.json)
 - Abbruch- und Retry-Hooks für asynchrone Aufgaben integriert
 Globale Zustände und Utilities ausgelagert (constants.py, files.py)
+- Fehlerausgabe beim Laden von Kategorien ergänzt
