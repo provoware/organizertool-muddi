@@ -37,3 +37,4 @@
 - Letzte Änderungen lesen: `cat CHANGELOG.md`
 - GUI auch per Python starten: 'python -c "import organizertool; organizertool.run_app()"'
 - Farbschema mit `export ORGANIZER_THEME=dark` wechseln (Theme=Farbvorlage).
+- Bei schmalem Fenster wird die Sidebar automatisch ausgeblendet

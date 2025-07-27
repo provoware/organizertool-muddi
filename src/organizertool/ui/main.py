@@ -49,15 +49,23 @@ class MainWindow(QMainWindow):
         self.load_modules()
 
         # Right sidebar as dock widget (aufklappbar)
-        sidebar = QDockWidget("Sidebar", self)
-        sidebar.setAllowedAreas(Qt.RightDockWidgetArea)
-        sidebar.setWidget(QLabel("Inhalt der Sidebar"))
-        self.addDockWidget(Qt.RightDockWidgetArea, sidebar)
-        sidebar.setVisible(False)
+        self.sidebar = QDockWidget("Sidebar", self)
+        self.sidebar.setAllowedAreas(Qt.RightDockWidgetArea)
+        self.sidebar.setWidget(QLabel("Inhalt der Sidebar"))
+        self.addDockWidget(Qt.RightDockWidgetArea, self.sidebar)
+        self.sidebar.setVisible(False)
 
         # Toggle sidebar via header label click (simple example)
         action = toolbar.actions()[0]
-        toolbar.widgetForAction(action).mousePressEvent = lambda event: sidebar.setVisible(not sidebar.isVisible())
+        toolbar.widgetForAction(action).mousePressEvent = lambda event: self.sidebar.setVisible(
+            not self.sidebar.isVisible()
+        )
+
+    def resizeEvent(self, event) -> None:  # type: ignore[override]
+        """Auto-hide sidebar on small window widths."""
+        if self.width() < 600:
+            self.sidebar.setVisible(False)
+        super().resizeEvent(event)
 
     def load_modules(self) -> None:
         """Create placeholder modules and show them."""

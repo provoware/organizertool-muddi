@@ -138,6 +138,7 @@ Beispiel:
 export ORGANIZER_THEME=light
 ```
 - Die Sidebar blendest du durch Klick auf "Hauptübersicht" ein oder aus.
+- Bei schmalem Fenster versteckt sich die Sidebar automatisch.
 - Starte das Modul "Alias- und Tastenkombis", um nützliche Kurzbefehle zu sehen.
 - Mit `cd ordnername` wechselst du den Ordner ("Directory").
 - `mkdir neuer_ordner` legt einen neuen Ordner an ("make directory").
