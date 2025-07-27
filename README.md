@@ -33,6 +33,12 @@ Den Stil des Codes prüfst du mit `flake8` ("Linter" = Programm, das auf Fehler 
 ```bash
 flake8 src/organizertool
 ```
+Mit `make check` fuehrst du Tests und Lint in einem Schritt aus:
+
+```bash
+make check
+```
+
 
 Um einzelne Module im Python-Interpreter zu testen, kannst du Folgendes eingeben:
 
@@ -118,3 +124,4 @@ Weitere Vorschläge findest du in `todo.txt`.
 - Eine Datei löschen: `rm -i meine_datei.txt` ("rm" l\u00f6scht Dateien, `-i` fragt sicherheitshalber nach).
 - Datei kopieren: `cp quelle ziel` ("cp" = Kopieren einer Datei).
 - Datei verschieben oder umbenennen: `mv quelle ziel` ("mv" = Move/Rename).
+

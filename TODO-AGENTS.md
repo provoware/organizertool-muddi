@@ -13,6 +13,5 @@
 - Backlog offener Verbesserungen pflegen
 - Modul zur Konvertierung von Mediendateien
 - Weitere Tests für Such- und GUI-Module schreiben
-- Lint- und Test-Befehle automatisieren
 - Mobiles Layout der GUI weiter optimieren
 - Farbschema konfigurierbar machen

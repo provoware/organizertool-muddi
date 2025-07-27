@@ -26,3 +26,4 @@
 - Datei vorsichtig löschen: `rm -i meine_datei.txt`
 - Datei kopieren: `cp quelle ziel`
 - Datei verschieben oder umbenennen: `mv quelle ziel`
+- Tests und Lint mit 'make check' ausführen

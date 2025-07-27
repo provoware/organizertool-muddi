@@ -12,3 +12,4 @@ GUI-Farben für bessere Sichtbarkeit angepasst
 Alias-Info-Modul mit realen Inhalten erstellt
 
 - Kategorien können nun über ORGANIZER_CATEGORIES angepasst werden
+- Makefile f\u00fcr Lint und Tests eingef\u00fchrt
