@@ -3,6 +3,7 @@
 __version__ = "0.1.1"
 
 from .services.hooks import run_with_retry
+from .services.trash import safe_remove
 
 
 def run_app() -> None:
@@ -21,4 +22,4 @@ def create_main_window():
     return MainWindow()
 
 
-__all__ = ["run_app", "create_main_window", "__version__", "run_with_retry"]
+__all__ = ["run_app", "create_main_window", "__version__", "run_with_retry", "safe_remove"]

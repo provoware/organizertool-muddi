@@ -44,3 +44,4 @@
 - Statusleiste zeigt unten Meldungen an (Statusbar).
 - Bei Fehlern hilft 'run_with_retry' (Retry = erneuter Versuch).
 - Bei Problemen mit Kategorien siehst du im Terminal eine Warnung
+- Datei sicher in den Papierkorb legen: python -c "from organizertool import safe_remove; safe_remove('datei.txt')"

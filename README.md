@@ -151,6 +151,11 @@ export ORGANIZER_THEME=light
 - Neue Datei anlegen: `touch meine_datei.txt` ("touch" legt eine leere Datei an).
 - Inhalt einer Datei anzeigen: `cat meine_datei.txt` ("cat" zeigt Textdateien an).
 - Eine Datei löschen: `rm -i meine_datei.txt` ("rm" l\u00f6scht Dateien, `-i` fragt sicherheitshalber nach).
+- Sicher löschen über den Papierkorb:
+  ```bash
+  python -c "from organizertool import safe_remove; safe_remove('meine_datei.txt')"
+  ```
+  Dabei wird die Datei in den System-Papierkorb verschoben ("Trash" = Ablage für gelöschte Daten).
 - Datei kopieren: `cp quelle ziel` ("cp" = Kopieren einer Datei).
 - Datei verschieben oder umbenennen: `mv quelle ziel` ("mv" = Move/Rename).
 - Mit `ls -la` siehst du Details zu Dateien ("-la" zeigt versteckte Dateien und Berechtigungen).
