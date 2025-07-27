@@ -1,0 +1,1 @@
+- Grundlegendes GUI-Fenster mit Header-Dashboard und rechter Sidebar implementiert

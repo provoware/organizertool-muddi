@@ -1,0 +1,3 @@
+- Modul für Systemaufräumung erstellen (z.B. temporäre Dateien löschen)
+- Modul zum Finden von Dateiduplikaten entwickeln
+- Weitere Module für Systemaufgaben planen
