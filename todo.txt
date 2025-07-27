@@ -51,3 +51,5 @@
 - Vor dem Release ein Paket bauen: `./scripts/build_package.sh`
 - Fertiges Paket findest du nach dem Build im Ordner `dist` ("dist" = Verteilsatz).
 - Hilfetexte anzeigen: `python -m organizertool tips`
+
+- Mit `./scripts/one_click_start.sh` richtest du automatisch eine virtuelle Umgebung ein und startest das Programm.

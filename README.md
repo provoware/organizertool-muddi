@@ -23,6 +23,16 @@ pip install pytest flake8 pytest-asyncio
 python -m organizertool.ui.main
 ```
 
+### Ein-Klick-Start
+
+Dieses Skript erstellt bei Bedarf eine virtuelle Umgebung ("virtual environment" = isolierte Arbeitsumgebung),
+installiert automatisch alle Abhängigkeiten ("Dependencies" = benötigte Pakete)
+und startet sofort die grafische Oberfläche:
+
+```bash
+./scripts/one_click_start.sh
+```
+
 Tests führst du so aus ("Test" = automatische Überprüfung):
 
 ```bash
@@ -226,4 +236,9 @@ Weitere Vorschläge findest du in `todo.txt`.
   python -m organizertool tips
   ```
   Damit liest du die Hinweise aus `todo.txt` direkt im Terminal.
+- Ein besonders einfacher Start gelingt mit:
+  ```bash
+  ./scripts/one_click_start.sh
+  ```
+  Dieses Skript richtet alles automatisch ein und öffnet die GUI.
 

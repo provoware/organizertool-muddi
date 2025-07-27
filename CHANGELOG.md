@@ -2,6 +2,10 @@
 
 Alle wichtigen Aenderungen an diesem Projekt werden hier dokumentiert.
 
+## [0.1.6] - 2025-07-27
+### Hinzugefuegt
+- Ein-Klick-Start-Skript `one_click_start.sh` richtet eine virtuelle Umgebung ein, installiert Abhaengigkeiten und startet die GUI
+
 ## [0.1.3] - 2025-07-27
 ### Hinzugefuegt
 - Automatisches Build-Skript (scripts/build_package.sh)
