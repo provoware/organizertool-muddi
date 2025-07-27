@@ -150,4 +150,9 @@ Weitere Vorschläge findest du in `todo.txt`.
   pip freeze > requirements.txt
   ```
 - Anleitung für Mitwirkende findest du in [CONTRIBUTING.md](CONTRIBUTING.md).
+- Aktuelle Version anzeigen ("Version" = Programmstand):
+  ```bash
+  python -c "import organizertool; print(organizertool.__version__)"
+  ```
+- Änderungen nachschlagen: `cat CHANGELOG.md` ("Changelog" = Liste aller Neuerungen).
 

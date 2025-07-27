@@ -33,3 +33,5 @@
 - Abhängigkeiten in Datei speichern: `pip freeze > requirements.txt`
 - Eigene Dateikategorien per 'categories.json' definieren und mit `export ORGANIZER_CATEGORIES=/pfad/zur/datei.json` aktivieren
 - Für Entwickler: Anleitung in CONTRIBUTING.md lesen
+- Aktuelle Programmversion anzeigen: `python -c "import organizertool; print(organizertool.__version__)"`
+- Letzte Änderungen lesen: `cat CHANGELOG.md`

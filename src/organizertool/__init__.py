@@ -1,6 +1,6 @@
-"""Organizer Tool Main package."""
+"""Organizer Tool main package."""
 
-VERSION = "0.1.0"
+__version__ = "0.1.1"
 
 
 def run_app() -> None:
@@ -19,4 +19,4 @@ def create_main_window():
     return MainWindow()
 
 
-__all__ = ["run_app", "create_main_window", "VERSION"]
+__all__ = ["run_app", "create_main_window", "__version__"]

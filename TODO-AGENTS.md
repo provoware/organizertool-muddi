@@ -3,7 +3,6 @@
 - Globale Zustände kapseln und Utilities zusammenführen
 - Asynchrone Ausführung mit Abbruch- und Retry-Hooks vorsehen
 - Pipeline für Lint, Tests und Builds erstellen
-- Changelog und Versionierung etablieren
 - Parameter und Variablen in der Doku erklären
 - Agent-Workflows validieren und testen
 - Definition of Done sicherstellen (Tests grün, Lint sauber)

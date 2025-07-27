@@ -16,3 +16,4 @@ Alias-Info-Modul mit realen Inhalten erstellt
 - Formatter und Typprüfung (black, flake8, mypy) eingerichtet
 - Abhängigkeiten lassen sich nun mit 'make deps' prüfen
 - Entwicklerdokumentation erstellt
+- Changelog-Datei erstellt und Version im Paket hinterlegt
