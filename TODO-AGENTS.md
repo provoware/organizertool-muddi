@@ -3,7 +3,6 @@
 - Globale Zustände kapseln und Utilities zusammenführen
 - Asynchrone Ausführung mit Abbruch- und Retry-Hooks vorsehen
 - Pipeline für Lint, Tests und Builds erstellen
-- Automatische Prüfung der Abhängigkeiten einrichten
 - Entwicklerdokumentation für Beitragende und Buildprozess verfassen
 - Changelog und Versionierung etablieren
 - Parameter und Variablen in der Doku erklären

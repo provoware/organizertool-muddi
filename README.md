@@ -50,6 +50,12 @@ Mit `make check` fuehrst du Tests und Lint in einem Schritt aus:
 make check
 ```
 
+Installierte Pakete kannst du überprüfen ("Dependency Check" = Kontrolle der Abhängigkeiten):
+
+```bash
+make deps
+```
+
 
 Um einzelne Module im Python-Interpreter zu testen, kannst du Folgendes eingeben:
 
@@ -125,6 +131,7 @@ Weitere Vorschläge findest du in `todo.txt`.
 - `mypy` kontrolliert die Typangaben ("Type Checker" = Programm für Datentypen).
 - `python -m organizertool.ui.main` startet die grafische Oberfläche.
 - Mit `python -m pip install -U -r requirements.txt` aktualisierst du alle Pakete (Pakete = Bibliotheken).
+- `make deps` überprüft installierte Pakete ("Dependency Check" = Kontrolle der Abhängigkeiten).
 - Die Farben der Oberfläche findest du in `src/organizertool/ui/main.py`. Dort sind dunkle Farbtöne eingestellt (#1e1e1e). Du kannst sie anpassen.
 - Die Sidebar blendest du durch Klick auf "Hauptübersicht" ein oder aus.
 - Starte das Modul "Alias- und Tastenkombis", um nützliche Kurzbefehle zu sehen.

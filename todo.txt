@@ -29,3 +29,4 @@
 - Datei kopieren: `cp quelle ziel`
 - Datei verschieben oder umbenennen: `mv quelle ziel`
 - Tests und Lint mit 'make check' ausführen
+- Abhängigkeiten prüfen: make deps

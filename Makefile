@@ -1,4 +1,4 @@
-.PHONY: lint test check fmt fmt-check typecheck
+.PHONY: lint test check fmt fmt-check typecheck deps
 
 lint:
         flake8 src/organizertool tests
@@ -16,4 +16,7 @@ typecheck:
         mypy src/organizertool tests
 
 check: fmt-check lint test typecheck
+
+deps:
+        python -m pip check
 

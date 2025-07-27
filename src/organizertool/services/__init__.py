@@ -8,6 +8,7 @@ from .search import (
     load_categories,
     FILE_CATEGORIES,
 )
+from .deps import check_dependencies
 
 __all__ = [
     "search_filenames",
@@ -16,4 +17,5 @@ __all__ = [
     "categorize_files",
     "load_categories",
     "FILE_CATEGORIES",
+    "check_dependencies",
 ]
