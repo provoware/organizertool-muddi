@@ -10,10 +10,28 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+Für Entwickler empfiehlt sich die Installation zusätzlicher Werkzeuge:
+
+```bash
+pip install pytest flake8
+```
+
 ## Starten
 
 ```bash
 python -m organizertool.ui.main
+```
+
+Tests führst du so aus ("Test" = automatische Überprüfung):
+
+```bash
+pytest
+```
+
+Den Stil des Codes prüfst du mit `flake8` ("Linter" = Programm, das auf Fehler hinweist):
+
+```bash
+flake8 src/organizertool
 ```
 
 Um einzelne Module im Python-Interpreter zu testen, kannst du Folgendes eingeben:
@@ -50,6 +68,7 @@ und Text. Zukünftig sollen folgende Funktionen ausgebaut werden:
 - "GUI" steht für *Graphical User Interface* (grafische Benutzeroberfläche)
 - "Modul" bedeutet eine Programmeinheit, die eine bestimmte Aufgabe erfüllt
 - "Interpreter" ist ein Programm, das Befehle direkt ausführt (hier: `python`)
+- "Asynchron" bedeutet, dass Aufgaben gleichzeitig laufen können (nebenläufig)
 
 Weitere Vorschläge findest du in `todo.txt`.
 
@@ -63,3 +82,5 @@ Weitere Vorschläge findest du in `todo.txt`.
 - Mit `ls` listest du Dateien im aktuellen Ordner auf (Ordner = Directory).
 - `pwd` zeigt dir den aktuellen Pfad (Pfad = Directory-Name) an.
 - Um nach einem anderen Begriff zu suchen, passe die Parameter in den Modulen an, z.B. `FileNameSearchModule.create('.', 'mein_wort')`.
+- Mit `pytest` führst du automatische Tests aus ("Tests" prüfen Funktionen).
+- `flake8` prüft die Code-Qualität und weist auf Formatierungsfehler hin ("Linter").

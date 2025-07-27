@@ -5,3 +5,6 @@
 - Kategorie-Modul implementiert
 - Erste Services f\u00fcr asynchrone Dateisuche erstellt
 
+Hilfsfunktion ``iter_files`` eingeführt, um Dateidurchläufe zu vereinheitlichen
+Erste Pytest-Tests für Suchfunktionen erstellt
+

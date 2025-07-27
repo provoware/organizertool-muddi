@@ -13,3 +13,5 @@
 - Python-Umgebung (virtual environment) mit `python3 -m venv venv` erstellen
 - Umgebung mit `source venv/bin/activate` aktivieren
 - Programm mit `python -m organizertool.ui.main` starten
+- Tests ausführen: `pytest`
+- Code-Qualität prüfen: `flake8 src/organizertool`
