@@ -1,6 +1,5 @@
 # Offene Agent-Aufgaben
 
-- Weitere Aufteilung der Projektstruktur nach Core/Services/UI/CLI/Data abschließen
 - Globale Zustände kapseln und Utilities zusammenführen
 - Formatter und Linter (black, flake8) sowie Typprüfung (mypy) einrichten
 - Asynchrone Ausführung mit Abbruch- und Retry-Hooks vorsehen
@@ -12,10 +11,7 @@
 - Agent-Workflows validieren und testen
 - Definition of Done sicherstellen (Tests grün, Lint sauber)
 - Backlog offener Verbesserungen pflegen
-- Modul zur Suche nach Wort im Dateinamen entwickeln
-- Modul zur Textsuche in Dateien erstellen
-- Modul zum Auflisten bestimmter Dateitypen in Ordnern (optional rekursiv)
-- Modul zur Sortierung nach Dateikategorien wie Text oder Video
+- Modul zur Sortierung nach Dateikategorien wie Text oder Video weiter ausbauen
 - Eigene Kategorien definierbar machen
 - Modul zur Konvertierung von Mediendateien
 - Modul zur Anzeige von Aliasen und Tastenkombinationen

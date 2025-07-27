@@ -16,15 +16,27 @@ pip install -r requirements.txt
 python -m organizertool.ui.main
 ```
 
+Um einzelne Module im Python-Interpreter zu testen, kannst du Folgendes eingeben:
+
+```bash
+python
+>>> from organizertool.ui.modules import FileNameSearchModule
+>>> mod = FileNameSearchModule.create('.', 'demo')
+```
+
 ## Projektstruktur
 
 - `src/organizertool/ui/main.py`: Basis-GUI mit Header und Sidebar
-- `src/organizertool/ui/modules.py`: Platzhalter für künftige Module
+- `src/organizertool/ui/modules.py`: Enthält Module wie Dateisuche
+- `src/organizertool/services/search.py`: Asynchrone (nebenläufige) Suchfunktionen
 - `TODO-AGENTS.md`: Offene Aufgaben für die Weiterentwicklung
 - `todo.txt`: Einfache Aufgabenliste für Benutzer
 - `erledigt.txt`: Bereits erledigte Punkte
 
 ## Geplante Module
+
+Einige einfache Module sind bereits enthalten, z.B. die Suche nach Dateinamen
+und Text. Zukünftig sollen folgende Funktionen ausgebaut werden:
 
 - Dateinamen nach Begriffen durchsuchen
 - Text in Dateien finden
@@ -37,6 +49,7 @@ python -m organizertool.ui.main
 
 - "GUI" steht für *Graphical User Interface* (grafische Benutzeroberfläche)
 - "Modul" bedeutet eine Programmeinheit, die eine bestimmte Aufgabe erfüllt
+- "Interpreter" ist ein Programm, das Befehle direkt ausführt (hier: `python`)
 
 Weitere Vorschläge findest du in `todo.txt`.
 
@@ -47,3 +60,6 @@ Weitere Vorschläge findest du in `todo.txt`.
 - Falls ein Begriff unklar ist, schau in die Klammern: Ein *Module* ist z.B. ein kleines Teilprogramm.
 - Mit `python -m pip list` siehst du alle installierten Pakete (Pakete = Bibliotheken).
 - Zum Beenden des Programms drückst du `Ctrl+C` (Strg+C, beendet den laufenden Prozess).
+- Mit `ls` listest du Dateien im aktuellen Ordner auf (Ordner = Directory).
+- `pwd` zeigt dir den aktuellen Pfad (Pfad = Directory-Name) an.
+- Um nach einem anderen Begriff zu suchen, passe die Parameter in den Modulen an, z.B. `FileNameSearchModule.create('.', 'mein_wort')`.

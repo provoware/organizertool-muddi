@@ -8,6 +8,8 @@
 - Eigene Kategorien definieren und durchsuchen
 - Modul zur Konvertierung von Mediendateien programmieren
 - Modul zum Anzeigen von Aliasen und Tastenkombinationen
+- Programm testen: `python -m organizertool.ui.main`
+- Für andere Suchbegriffe Parameter ändern, z.B. `FileNameSearchModule.create('.', 'wort')`
 - Python-Umgebung (virtual environment) mit `python3 -m venv venv` erstellen
 - Umgebung mit `source venv/bin/activate` aktivieren
 - Programm mit `python -m organizertool.ui.main` starten

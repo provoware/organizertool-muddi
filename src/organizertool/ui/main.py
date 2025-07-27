@@ -16,6 +16,7 @@ from .modules import (
     FileNameSearchModule,
     TextSearchModule,
     FileTypeSearchModule,
+    CategoryModule,
     MediaConvertModule,
     AliasInfoModule,
 )
@@ -59,6 +60,7 @@ class MainWindow(QMainWindow):
             FileNameSearchModule.create(),
             TextSearchModule.create(),
             FileTypeSearchModule.create(),
+            CategoryModule.create(),
             MediaConvertModule.create(),
             AliasInfoModule.create(),
         ]
