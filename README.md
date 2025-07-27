@@ -63,6 +63,26 @@ und Text. Zukünftig sollen folgende Funktionen ausgebaut werden:
 - Mediendateien konvertieren
 - Informationen zu Aliasen und Tastenkombinationen anzeigen
 
+### Eigene Kategorien definieren
+
+Lege eine Datei `categories.json` an und fülle sie so:
+
+```json
+{
+  "dokumente": [".pdf", ".docx"],
+  "python": [".py"]
+}
+```
+
+Setze dann die Umgebungsvariable ("Environment Variable" = Systemeinstellung)
+`ORGANIZER_CATEGORIES` auf den Pfad dieser Datei, zum Beispiel:
+
+```bash
+export ORGANIZER_CATEGORIES=/pfad/zur/categories.json
+```
+
+Starte danach die GUI erneut, um deine Kategorien zu sehen.
+
 ## Hinweise für Laien
 
 - "GUI" steht für *Graphical User Interface* (grafische Benutzeroberfläche)

@@ -11,8 +11,6 @@
 - Agent-Workflows validieren und testen
 - Definition of Done sicherstellen (Tests grün, Lint sauber)
 - Backlog offener Verbesserungen pflegen
-- Modul zur Sortierung nach Dateikategorien wie Text oder Video weiter ausbauen
-- Eigene Kategorien definierbar machen
 - Modul zur Konvertierung von Mediendateien
 - Weitere Tests für Such- und GUI-Module schreiben
 - Lint- und Test-Befehle automatisieren

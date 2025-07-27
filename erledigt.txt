@@ -11,3 +11,4 @@ Erste Pytest-Tests für Suchfunktionen erstellt
 GUI-Farben für bessere Sichtbarkeit angepasst
 Alias-Info-Modul mit realen Inhalten erstellt
 
+- Kategorien können nun über ORGANIZER_CATEGORIES angepasst werden

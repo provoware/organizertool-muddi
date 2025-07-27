@@ -5,7 +5,6 @@
 - Modul zur Textsuche in Dateien entwickeln
 - Modul zum Finden von Dateitypen in Ordnern (optional rekursiv)
 - Modul zum Suchen nach Dateikategorien wie Textdateien oder Videos
-- Eigene Kategorien definieren und durchsuchen
 - Modul zur Konvertierung von Mediendateien programmieren
 - Modul "Alias- und Tastenkombis" in der GUI ausprobieren
 - Programm testen: `python -m organizertool.ui.main`

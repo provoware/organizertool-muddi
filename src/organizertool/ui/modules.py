@@ -9,6 +9,7 @@ from ..services import (
     search_text,
     list_filetypes,
     categorize_files,
+    load_categories,
 )
 
 
@@ -89,7 +90,7 @@ class CategoryModule(BaseModule):
 
     @classmethod
     def create(cls, directory: str = ".") -> "CategoryModule":
-        categories = asyncio.run(categorize_files(directory))
+        categories = asyncio.run(categorize_files(directory, categories=load_categories()))
         widget = QWidget()
         layout = QVBoxLayout()
         for cat, files in categories.items():
