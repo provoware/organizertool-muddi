@@ -6,6 +6,10 @@ Alle wichtigen Aenderungen an diesem Projekt werden hier dokumentiert.
 ### Hinzugefuegt
 - Automatisches Build-Skript (scripts/build_package.sh)
 
+## [0.1.4] - 2025-07-27
+### Hinzugefuegt
+- Schriftgröße kann über `ORGANIZER_FONT_SIZE` oder GUI geändert werden
+
 ## [0.1.2] - 2025-07-27
 ### Hinzugefuegt
 - Einfache Kommandozeile (cli.py) mit Suchbefehlen und GUI-Start

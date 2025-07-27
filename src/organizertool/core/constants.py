@@ -9,6 +9,9 @@ ENV_SETTINGS = "ORGANIZER_SETTINGS"
 ENV_THEME = "ORGANIZER_THEME"
 """Name of the variable zur Wahl des Themes (Farbschema)."""
 
+ENV_FONT_SIZE = "ORGANIZER_FONT_SIZE"
+"""Name der Variablen für die Schriftgröße in Punkten."""
+
 ENV_CATEGORIES = "ORGANIZER_CATEGORIES"
 """Name of the Variable, die auf eine JSON-Datei mit Dateikategorien zeigt."""
 
@@ -18,6 +21,9 @@ SETTINGS_PATH = Path.home() / ".organizertool" / "settings.json"
 
 DEFAULT_THEME = "dark"
 """Theme, das genutzt wird, falls nichts anderes gesetzt ist."""
+
+DEFAULT_FONT_SIZE = 12
+"""Standard-Schriftgröße in Punkten."""
 
 FILE_CATEGORIES = {
     "text": [".txt", ".md", ".rst"],
@@ -29,8 +35,10 @@ FILE_CATEGORIES = {
 __all__ = [
     "ENV_SETTINGS",
     "ENV_THEME",
+    "ENV_FONT_SIZE",
     "ENV_CATEGORIES",
     "SETTINGS_PATH",
     "DEFAULT_THEME",
+    "DEFAULT_FONT_SIZE",
     "FILE_CATEGORIES",
 ]

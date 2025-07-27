@@ -39,6 +39,7 @@
 - Farbschema mit `export ORGANIZER_THEME=dark` wechseln (Theme=Farbvorlage).
 - Bei schmalem Fenster wird die Sidebar automatisch ausgeblendet
 - Theme im Programm über die Auswahlliste ändern und dauerhaft speichern
+- Schriftgröße anpassen: `export ORGANIZER_FONT_SIZE=14` oder in der GUI auswählen
 - Gespeicherte Einstellungen ansehen: `cat ~/.organizertool/settings.json`
 - Speicherort der Einstellungen anpassen: `export ORGANIZER_SETTINGS=/pfad/zur/datei.json`
 - Statusleiste zeigt unten Meldungen an (Statusbar).

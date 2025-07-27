@@ -5,7 +5,12 @@ from __future__ import annotations
 import os
 
 from ..core.settings import load_settings, save_settings
-from ..core.constants import ENV_THEME, DEFAULT_THEME
+from ..core.constants import (
+    ENV_THEME,
+    ENV_FONT_SIZE,
+    DEFAULT_THEME,
+    DEFAULT_FONT_SIZE,
+)
 
 THEMES: dict[str, str] = {
     "dark": """
@@ -42,9 +47,11 @@ def get_current_theme_name() -> str:
 
 
 def get_current_theme() -> str:
-    """Return stylesheet for the active theme."""
+    """Return stylesheet for the active theme including font size."""
 
-    return THEMES.get(get_current_theme_name(), THEMES[DEFAULT_THEME])
+    theme = THEMES.get(get_current_theme_name(), THEMES[DEFAULT_THEME])
+    size = get_current_font_size()
+    return theme + f"\nQWidget {{ font-size: {size}pt; }}"
 
 
 def set_current_theme(name: str) -> None:
@@ -52,4 +59,29 @@ def set_current_theme(name: str) -> None:
 
     data = load_settings()
     data["theme"] = name
+    save_settings(data)
+
+
+def get_current_font_size() -> int:
+    """Return the active font size in points."""
+
+    env = os.getenv(ENV_FONT_SIZE)
+    if env:
+        try:
+            return int(env)
+        except ValueError:
+            pass
+    settings = load_settings()
+    size = settings.get("font_size", DEFAULT_FONT_SIZE)
+    try:
+        return int(size)
+    except (TypeError, ValueError):
+        return DEFAULT_FONT_SIZE
+
+
+def set_current_font_size(size: int) -> None:
+    """Persist the font size."""
+
+    data = load_settings()
+    data["font_size"] = int(size)
     save_settings(data)

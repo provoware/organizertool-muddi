@@ -12,7 +12,14 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtCore import Qt
 
-from .theme import get_current_theme, set_current_theme, THEMES, get_current_theme_name
+from .theme import (
+    get_current_theme,
+    set_current_theme,
+    THEMES,
+    get_current_theme_name,
+    get_current_font_size,
+    set_current_font_size,
+)
 
 from .modules import (
     BaseModule,
@@ -48,6 +55,13 @@ class MainWindow(QMainWindow):
         theme_box.currentTextChanged.connect(self.change_theme)
         toolbar.addWidget(theme_box)
 
+        font_box = QComboBox()
+        for size in ["8", "10", "12", "14", "16", "18", "20"]:
+            font_box.addItem(size)
+        font_box.setCurrentText(str(get_current_font_size()))
+        font_box.currentTextChanged.connect(self.change_font_size)
+        toolbar.addWidget(font_box)
+
         # Central area lists all loaded modules
         central = QWidget()
         self.central_layout = QVBoxLayout()
@@ -80,6 +94,17 @@ class MainWindow(QMainWindow):
         set_current_theme(name)
         self.setStyleSheet(get_current_theme())
         self.statusBar().showMessage(f"Theme gewechselt zu {name}", 2000)
+
+    def change_font_size(self, size: str) -> None:
+        """Adjust and persist the font size."""
+
+        try:
+            value = int(size)
+        except ValueError:
+            value = get_current_font_size()
+        set_current_font_size(value)
+        self.setStyleSheet(get_current_theme())
+        self.statusBar().showMessage(f"Schriftgröße gesetzt auf {value}", 2000)
 
     def resizeEvent(self, event) -> None:  # type: ignore[override]
         """Auto-hide sidebar on small window widths."""

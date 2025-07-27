@@ -163,12 +163,18 @@ Weitere Vorschläge findest du in `todo.txt`.
 - Mit `python -m pip install -U -r requirements.txt` aktualisierst du alle Pakete (Pakete = Bibliotheken).
 - `make deps` überprüft installierte Pakete ("Dependency Check" = Kontrolle der Abhängigkeiten).
 - Die Farben der Oberfläche stellst du über die Umgebungsvariable `ORGANIZER_THEME` ein. Vier Themes (Farbvorlagen) sind vorhanden: `dark`, `light`, `blue` und `contrast`.
-Beispiel:
-```bash
-export ORGANIZER_THEME=light
-```
-- Du kannst das Theme auch direkt in der GUI über ein Auswahlfeld ändern. Die
+  Beispiel:
+  ```bash
+  export ORGANIZER_THEME=light
+  ```
+  Du kannst das Theme auch direkt in der GUI über ein Auswahlfeld ändern. Die
   Auswahl wird in `~/.organizertool/settings.json` gespeichert ("Settings-Datei" = Ablage für Einstellungen).
+- Die Schriftgröße passt du über die Variable `ORGANIZER_FONT_SIZE` an.
+  Beispiel für größere Schrift:
+  ```bash
+  export ORGANIZER_FONT_SIZE=14
+  ```
+  Auch in der GUI gibt es dafür eine Auswahlliste.
 - Mit der Variablen `ORGANIZER_SETTINGS` kannst du den Ort dieser Datei ändern.
 - Die Sidebar blendest du durch Klick auf "Hauptübersicht" ein oder aus.
 - Bei schmalem Fenster versteckt sich die Sidebar automatisch.
