@@ -1,19 +1,12 @@
 import asyncio
 import json
 import os
-from typing import Dict, Iterable, List, Optional, Callable
+from typing import Dict, List, Optional, Callable
+
+from ..core.constants import ENV_CATEGORIES, FILE_CATEGORIES
+from ..core.files import iter_files
 
 from .hooks import run_with_retry
-
-
-def iter_files(directory: str, recursive: bool = True) -> Iterable[str]:
-    """Yield all file paths under ``directory``."""
-
-    for root, dirs, files in os.walk(directory):
-        for fname in files:
-            yield os.path.join(root, fname)
-        if not recursive:
-            break
 
 
 async def search_filenames(
@@ -113,22 +106,16 @@ async def list_filetypes(
     )
 
 
-FILE_CATEGORIES: Dict[str, List[str]] = {
-    "text": [".txt", ".md", ".rst"],
-    "video": [".mp4", ".avi", ".mkv"],
-    "image": [".jpg", ".png", ".gif"],
-}
-
-
 def load_categories() -> Dict[str, List[str]]:
-    """Return categories from JSON file defined in ``ORGANIZER_CATEGORIES``.
+    """Return categories from the file pointed to by ``ENV_CATEGORIES``.
 
-    The environment variable should point to a JSON file with a mapping of
-    category names to lists of file extensions. If the variable is not set,
-    ``FILE_CATEGORIES`` is returned.
+    ``ENV_CATEGORIES`` ist der Name einer Umgebungsvariable (Environment
+    Variable). Sie sollte auf eine JSON-Datei verweisen, die Kategorien zu
+    Dateiendungen zuordnet. Ist nichts gesetzt, werden ``FILE_CATEGORIES``
+    genutzt.
     """
 
-    cfg_path = os.getenv("ORGANIZER_CATEGORIES")
+    cfg_path = os.getenv(ENV_CATEGORIES)
     if not cfg_path:
         return FILE_CATEGORIES
     try:

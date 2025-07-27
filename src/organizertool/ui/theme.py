@@ -5,6 +5,7 @@ from __future__ import annotations
 import os
 
 from ..core.settings import load_settings, save_settings
+from ..core.constants import ENV_THEME, DEFAULT_THEME
 
 THEMES: dict[str, str] = {
     "dark": """
@@ -29,13 +30,11 @@ THEMES: dict[str, str] = {
     """,
 }
 
-DEFAULT_THEME = "dark"
-
 
 def get_current_theme_name() -> str:
     """Return the active theme name."""
 
-    env = os.getenv("ORGANIZER_THEME")
+    env = os.getenv(ENV_THEME)
     if env:
         return env.lower()
     settings = load_settings()

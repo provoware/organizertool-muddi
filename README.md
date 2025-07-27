@@ -1,6 +1,7 @@
 # Organizer Tool Muddi
 
 Dieses Projekt soll ein modular aufgebautes Werkzeug für Linux bereitstellen. Es enthält eine grafische Hauptoberfläche mit Header und einklappbarer Sidebar.
+Den aktuellen Fortschritt findest du in der Datei `STATUS.md`.
 
 ## Installation
 
@@ -139,6 +140,7 @@ export ORGANIZER_THEME=light
 ```
 - Du kannst das Theme auch direkt in der GUI über ein Auswahlfeld ändern. Die
   Auswahl wird in `~/.organizertool/settings.json` gespeichert ("Settings-Datei" = Ablage für Einstellungen).
+- Mit der Variablen `ORGANIZER_SETTINGS` kannst du den Ort dieser Datei ändern.
 - Die Sidebar blendest du durch Klick auf "Hauptübersicht" ein oder aus.
 - Bei schmalem Fenster versteckt sich die Sidebar automatisch.
 - Starte das Modul "Alias- und Tastenkombis", um nützliche Kurzbefehle zu sehen.

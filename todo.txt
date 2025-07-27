@@ -40,5 +40,6 @@
 - Bei schmalem Fenster wird die Sidebar automatisch ausgeblendet
 - Theme im Programm über die Auswahlliste ändern und dauerhaft speichern
 - Gespeicherte Einstellungen ansehen: `cat ~/.organizertool/settings.json`
+- Speicherort der Einstellungen anpassen: `export ORGANIZER_SETTINGS=/pfad/zur/datei.json`
 - Statusleiste zeigt unten Meldungen an (Statusbar).
 - Bei Fehlern hilft 'run_with_retry' (Retry = erneuter Versuch).

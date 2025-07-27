@@ -3,17 +3,16 @@ import os
 from pathlib import Path
 from typing import Any, Dict
 
+from .constants import ENV_SETTINGS, SETTINGS_PATH
+
 
 def get_settings_path() -> Path:
-    """Return path to the settings file.
+    """Return path to the settings file."""
 
-    The environment variable ``ORGANIZER_SETTINGS`` can override the default
-    location ``~/.organizertool/settings.json``.
-    """
-    env = os.getenv("ORGANIZER_SETTINGS")
+    env = os.getenv(ENV_SETTINGS)
     if env:
         return Path(env)
-    return Path.home() / ".organizertool" / "settings.json"
+    return SETTINGS_PATH
 
 
 def load_settings() -> Dict[str, Any]:

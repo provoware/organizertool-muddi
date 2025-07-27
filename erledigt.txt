@@ -21,3 +21,4 @@ Alias-Info-Modul mit realen Inhalten erstellt
 - Mobile Ansicht verbessert: Sidebar blendet sich bei kleiner Fensterbreite automatisch aus
 - Theme-Auswahl wird gespeichert (settings.json)
 - Abbruch- und Retry-Hooks für asynchrone Aufgaben integriert
+Globale Zustände und Utilities ausgelagert (constants.py, files.py)
