@@ -50,3 +50,4 @@
 - Dateien nach Namen suchen: `python -m organizertool search-name ORDNER wort`
 - Vor dem Release ein Paket bauen: `./scripts/build_package.sh`
 - Fertiges Paket findest du nach dem Build im Ordner `dist` ("dist" = Verteilsatz).
+- Hilfetexte anzeigen: `python -m organizertool tips`

@@ -10,6 +10,10 @@ Alle wichtigen Aenderungen an diesem Projekt werden hier dokumentiert.
 ### Hinzugefuegt
 - Schriftgröße kann über `ORGANIZER_FONT_SIZE` oder GUI geändert werden
 
+## [0.1.5] - 2025-07-27
+### Hinzugefuegt
+- Neuer CLI-Befehl `tips` zeigt alle Hinweise aus `todo.txt`
+
 ## [0.1.2] - 2025-07-27
 ### Hinzugefuegt
 - Einfache Kommandozeile (cli.py) mit Suchbefehlen und GUI-Start

@@ -1,6 +1,6 @@
 """Organizer Tool main package."""
 
-__version__ = "0.1.4"
+__version__ = "0.1.5"
 
 from .services.hooks import run_with_retry
 from .services.trash import safe_remove

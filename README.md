@@ -221,4 +221,9 @@ Weitere Vorschläge findest du in `todo.txt`.
   await run_with_retry(meine_aufgabe, retries=3)
   ```
 - Unten zeigt eine Statusleiste kurze Hinweise an ("Statusbar" = Leiste am Fensterrand).
+- Hilfetexte kannst du über die Kommandozeile abrufen:
+  ```bash
+  python -m organizertool tips
+  ```
+  Damit liest du die Hinweise aus `todo.txt` direkt im Terminal.
 

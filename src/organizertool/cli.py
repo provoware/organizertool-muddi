@@ -1,6 +1,7 @@
 import argparse
 import asyncio
 from typing import List
+from pathlib import Path
 
 from . import __version__, run_app
 from .services import search
@@ -16,6 +17,19 @@ def _search_names(args: argparse.Namespace) -> None:
     )
     for path in results:
         print(path)
+
+
+def _show_tips(_: argparse.Namespace) -> None:
+    """Print beginner tips from todo.txt."""
+
+    root = Path(__file__).resolve().parents[2]
+    todo = root / "todo.txt"
+    try:
+        text = todo.read_text(encoding="utf-8")
+    except OSError:
+        print("Tip-Datei nicht gefunden")
+        return
+    print(text)
 
 
 def _search_text(args: argparse.Namespace) -> None:
@@ -85,6 +99,9 @@ def main(argv: List[str] | None = None) -> None:
         help="nicht rekursiv suchen",
     )
     types_p.set_defaults(func=_list_types)
+
+    tips_p = sub.add_parser("tips", help="Tipps für Einsteiger anzeigen")
+    tips_p.set_defaults(func=_show_tips)
 
     args = parser.parse_args(argv)
     if hasattr(args, "func"):
