@@ -38,7 +38,7 @@ class MainWindow(QMainWindow):
         # Header dashboard using a toolbar
         toolbar = QToolBar("Dashboard")
         toolbar.setMovable(False)
-        self.addToolBar(Qt.TopToolBarArea, toolbar)
+        self.addToolBar(Qt.TopToolBarArea, toolbar)  # type: ignore[attr-defined]
         toolbar.addWidget(QLabel("Hauptübersicht"))
 
         theme_box = QComboBox()
@@ -58,9 +58,9 @@ class MainWindow(QMainWindow):
 
         # Right sidebar as dock widget (aufklappbar)
         self.sidebar = QDockWidget("Sidebar", self)
-        self.sidebar.setAllowedAreas(Qt.RightDockWidgetArea)
+        self.sidebar.setAllowedAreas(Qt.RightDockWidgetArea)  # type: ignore[attr-defined]
         self.sidebar.setWidget(QLabel("Inhalt der Sidebar"))
-        self.addDockWidget(Qt.RightDockWidgetArea, self.sidebar)
+        self.addDockWidget(Qt.RightDockWidgetArea, self.sidebar)  # type: ignore[attr-defined]
         self.sidebar.setVisible(False)
 
         # simple status bar for user feedback
@@ -68,9 +68,11 @@ class MainWindow(QMainWindow):
 
         # Toggle sidebar via header label click (simple example)
         action = toolbar.actions()[0]
-        toolbar.widgetForAction(action).mousePressEvent = lambda event: self.sidebar.setVisible(
-            not self.sidebar.isVisible()
-        )
+
+        def _toggle(_: object) -> None:
+            self.sidebar.setVisible(not self.sidebar.isVisible())
+
+        toolbar.widgetForAction(action).mousePressEvent = _toggle  # type: ignore[assignment]
 
     def change_theme(self, name: str) -> None:
         """Apply and persist selected theme."""

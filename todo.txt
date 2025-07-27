@@ -45,3 +45,6 @@
 - Bei Fehlern hilft 'run_with_retry' (Retry = erneuter Versuch).
 - Bei Problemen mit Kategorien siehst du im Terminal eine Warnung
 - Datei sicher in den Papierkorb legen: python -c "from organizertool import safe_remove; safe_remove('datei.txt')"
+- GUI über die Kommandozeile starten: `python -m organizertool gui`
+- Dateien nach Namen suchen: `python -m organizertool search-name ORDNER wort`
+- Vor dem Release ein Paket bauen: `python -m pip install build && python -m build`

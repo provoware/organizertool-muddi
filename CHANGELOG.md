@@ -7,6 +7,10 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 - Datei `CHANGELOG.md` eingeführt
 - Version im Paket festgelegt
 
+## [0.1.2] - 2025-07-27
+### Hinzugefügt
+- Einfache Kommandozeile (cli.py) mit Suchbefehlen und GUI-Start
+
 ## [0.1.0] - 2025-07-26
 ### Erstes Release
 - Grundfunktionen der GUI

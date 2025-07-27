@@ -57,6 +57,35 @@ Installierte Pakete kannst du überprüfen ("Dependency Check" = Kontrolle der A
 make deps
 ```
 
+## Kommandozeile (CLI)
+
+Mit einem einfachen Kommando kannst du die grafische Oberfläche oder Suchbefehle
+starten. "CLI" steht für *Command Line Interface* (Befehlszeile).
+
+GUI öffnen:
+
+```bash
+python -m organizertool gui
+```
+
+Dateien nach Namen durchsuchen:
+
+```bash
+python -m organizertool search-name ORDNER suchwort
+```
+
+Text in Dateien finden:
+
+```bash
+python -m organizertool search-text ORDNER suchwort
+```
+
+Dateien nach Endung auflisten:
+
+```bash
+python -m organizertool list-types ORDNER .py .txt
+```
+
 
 Um einzelne Module im Python-Interpreter zu testen, kannst du Folgendes eingeben:
 
@@ -160,9 +189,14 @@ export ORGANIZER_THEME=light
 - Datei verschieben oder umbenennen: `mv quelle ziel` ("mv" = Move/Rename).
 - Mit `ls -la` siehst du Details zu Dateien ("-la" zeigt versteckte Dateien und Berechtigungen).
 - Installierte Pakete mit Versionen speicherst du in `requirements.txt`:
-  ```bash
-  pip freeze > requirements.txt
-  ```
+-  ```bash
+-  pip freeze > requirements.txt
+-  ```
+-  Ein Paket für die Veröffentlichung baust du mit:
+-  ```bash
+-  python -m pip install build
+-  python -m build
+-  ```
 - Anleitung für Mitwirkende findest du in [CONTRIBUTING.md](CONTRIBUTING.md).
 - Aktuelle Version anzeigen ("Version" = Programmstand):
   ```bash

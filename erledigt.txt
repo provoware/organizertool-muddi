@@ -25,3 +25,4 @@ Globale Zustände und Utilities ausgelagert (constants.py, files.py)
 - Fehlerausgabe beim Laden von Kategorien ergänzt
 - Dateien k\xC3\xB6nnen nun sicher \xC3\xBCber den Papierkorb gel\xC3\xB6scht werden (safe_remove)
 
+Einfache Kommandozeile hinzugefügt (cli.py)
