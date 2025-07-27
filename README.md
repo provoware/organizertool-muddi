@@ -144,4 +144,10 @@ Weitere Vorschläge findest du in `todo.txt`.
 - Eine Datei löschen: `rm -i meine_datei.txt` ("rm" l\u00f6scht Dateien, `-i` fragt sicherheitshalber nach).
 - Datei kopieren: `cp quelle ziel` ("cp" = Kopieren einer Datei).
 - Datei verschieben oder umbenennen: `mv quelle ziel` ("mv" = Move/Rename).
+- Mit `ls -la` siehst du Details zu Dateien ("-la" zeigt versteckte Dateien und Berechtigungen).
+- Installierte Pakete mit Versionen speicherst du in `requirements.txt`:
+  ```bash
+  pip freeze > requirements.txt
+  ```
+- Anleitung für Mitwirkende findest du in [CONTRIBUTING.md](CONTRIBUTING.md).
 

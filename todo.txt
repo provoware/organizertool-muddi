@@ -30,3 +30,6 @@
 - Datei verschieben oder umbenennen: `mv quelle ziel`
 - Tests und Lint mit 'make check' ausführen
 - Abhängigkeiten prüfen: make deps
+- Abhängigkeiten in Datei speichern: `pip freeze > requirements.txt`
+- Eigene Dateikategorien per 'categories.json' definieren und mit `export ORGANIZER_CATEGORIES=/pfad/zur/datei.json` aktivieren
+- Für Entwickler: Anleitung in CONTRIBUTING.md lesen

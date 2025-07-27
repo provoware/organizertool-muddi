@@ -15,3 +15,4 @@ Alias-Info-Modul mit realen Inhalten erstellt
 - Makefile f\u00fcr Lint und Tests eingef\u00fchrt
 - Formatter und Typprüfung (black, flake8, mypy) eingerichtet
 - Abhängigkeiten lassen sich nun mit 'make deps' prüfen
+- Entwicklerdokumentation erstellt
