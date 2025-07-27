@@ -13,7 +13,7 @@ pip install -r requirements.txt
 Für Entwickler empfiehlt sich die Installation zusätzlicher Werkzeuge:
 
 ```bash
-pip install pytest flake8
+pip install pytest flake8 pytest-asyncio
 ```
 
 ## Starten
@@ -92,3 +92,9 @@ Weitere Vorschläge findest du in `todo.txt`.
 - Mit `cd ordnername` wechselst du den Ordner ("Directory").
 - `mkdir neuer_ordner` legt einen neuen Ordner an ("make directory").
 - Drücke `F11`, um die GUI im Vollbild zu sehen ("Fullscreen").
+- Mit `history` siehst du vergangene Befehle ("history" = Befehlsverlauf).
+- Neue Datei anlegen: `touch meine_datei.txt` ("touch" legt eine leere Datei an).
+- Inhalt einer Datei anzeigen: `cat meine_datei.txt` ("cat" zeigt Textdateien an).
+- Eine Datei löschen: `rm -i meine_datei.txt` ("rm" l\u00f6scht Dateien, `-i` fragt sicherheitshalber nach).
+- Datei kopieren: `cp quelle ziel` ("cp" = Kopieren einer Datei).
+- Datei verschieben oder umbenennen: `mv quelle ziel` ("mv" = Move/Rename).

@@ -21,3 +21,9 @@
 - Ordner wechseln: `cd ordnername`
 - Neuen Ordner anlegen: `mkdir neuer_ordner`
 - Vollbildmodus der GUI mit `F11` einschalten
+- Befehlsverlauf ansehen: `history`
+- Leere Datei erstellen: `touch meine_datei.txt`
+- Inhalt anzeigen: `cat meine_datei.txt`
+- Datei vorsichtig löschen: `rm -i meine_datei.txt`
+- Datei kopieren: `cp quelle ziel`
+- Datei verschieben oder umbenennen: `mv quelle ziel`
