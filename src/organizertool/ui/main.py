@@ -1,7 +1,17 @@
 from __future__ import annotations
 
-from PySide6.QtWidgets import QMainWindow, QDockWidget, QLabel, QToolBar, QApplication, QWidget, QVBoxLayout
+from PySide6.QtWidgets import (
+    QApplication,
+    QLabel,
+    QDockWidget,
+    QMainWindow,
+    QToolBar,
+    QWidget,
+    QVBoxLayout,
+)
 from PySide6.QtCore import Qt
+
+from .modules import BaseModule
 
 
 class MainWindow(QMainWindow):
@@ -16,14 +26,15 @@ class MainWindow(QMainWindow):
         self.addToolBar(Qt.TopToolBarArea, toolbar)
         toolbar.addWidget(QLabel("Hauptübersicht"))
 
-        # Central placeholder
+        # Central area lists all loaded modules
         central = QWidget()
-        central_layout = QVBoxLayout()
-        central_layout.addWidget(QLabel("Hier kommen Module hin"))
-        central.setLayout(central_layout)
+        self.central_layout = QVBoxLayout()
+        central.setLayout(self.central_layout)
         self.setCentralWidget(central)
 
-        # Right sidebar as dock widget
+        self.load_modules()
+
+        # Right sidebar as dock widget (aufklappbar)
         sidebar = QDockWidget("Sidebar", self)
         sidebar.setAllowedAreas(Qt.RightDockWidgetArea)
         sidebar.setWidget(QLabel("Inhalt der Sidebar"))
@@ -32,6 +43,15 @@ class MainWindow(QMainWindow):
 
         # Toggle sidebar via header label click (simple example)
         toolbar.widgetForAction(toolbar.actions()[0]).mousePressEvent = lambda event: sidebar.setVisible(not sidebar.isVisible())
+
+    def load_modules(self) -> None:
+        """Create placeholder modules and show them."""
+        modules = [
+            BaseModule.create_dummy("Systemaufräumung"),
+            BaseModule.create_dummy("Duplikatsuche"),
+        ]
+        for mod in modules:
+            self.central_layout.addWidget(mod.widget)
 
 
 def run_app() -> None:
@@ -43,3 +63,4 @@ def run_app() -> None:
 
 if __name__ == "__main__":
     run_app()
+

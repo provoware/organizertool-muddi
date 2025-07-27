@@ -1,3 +1,6 @@
 - Modul für Systemaufräumung erstellen (z.B. temporäre Dateien löschen)
 - Modul zum Finden von Dateiduplikaten entwickeln
 - Weitere Module für Systemaufgaben planen
+- Python-Umgebung (virtual environment) mit `python3 -m venv venv` erstellen
+- Umgebung mit `source venv/bin/activate` aktivieren
+- Programm mit `python -m organizertool.ui.main` starten

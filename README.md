@@ -13,12 +13,13 @@ pip install -r requirements.txt
 ## Starten
 
 ```bash
-python -m organizertool.gui
+python -m organizertool.ui.main
 ```
 
 ## Projektstruktur
 
-- `src/organizertool/gui.py`: Basis-GUI mit Header und Sidebar
+- `src/organizertool/ui/main.py`: Basis-GUI mit Header und Sidebar
+- `src/organizertool/ui/modules.py`: Platzhalter für künftige Module
 - `TODO-AGENTS.md`: Offene Aufgaben für die Weiterentwicklung
 - `todo.txt`: Einfache Aufgabenliste für Benutzer
 - `erledigt.txt`: Bereits erledigte Punkte
@@ -29,3 +30,9 @@ python -m organizertool.gui
 - "Modul" bedeutet eine Programmeinheit, die eine bestimmte Aufgabe erfüllt
 
 Weitere Vorschläge findest du in `todo.txt`.
+
+## Weitere Laienvorschläge
+
+- Nach der Installation kannst du mit `deactivate` die virtuelle Umgebung verlassen.
+- Mit `git pull` aktualisierst du den Code ("Repository" = Projektablage).
+- Falls ein Begriff unklar ist, schau in die Klammern: Ein *Module* ist z.B. ein kleines Teilprogramm.

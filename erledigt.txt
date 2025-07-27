@@ -1,1 +1,3 @@
 - Grundlegendes GUI-Fenster mit Header-Dashboard und rechter Sidebar implementiert
+- Projektstruktur nach Core/Services/UI/CLI/Data aufteilen
+
