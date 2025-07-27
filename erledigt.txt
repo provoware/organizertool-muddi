@@ -17,3 +17,4 @@ Alias-Info-Modul mit realen Inhalten erstellt
 - Abhängigkeiten lassen sich nun mit 'make deps' prüfen
 - Entwicklerdokumentation erstellt
 - Changelog-Datei erstellt und Version im Paket hinterlegt
+- Farbschema der GUI konfigurierbar gemacht (vier Themes via ORGANIZER_THEME).

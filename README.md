@@ -132,7 +132,11 @@ Weitere Vorschläge findest du in `todo.txt`.
 - `python -m organizertool.ui.main` startet die grafische Oberfläche.
 - Mit `python -m pip install -U -r requirements.txt` aktualisierst du alle Pakete (Pakete = Bibliotheken).
 - `make deps` überprüft installierte Pakete ("Dependency Check" = Kontrolle der Abhängigkeiten).
-- Die Farben der Oberfläche findest du in `src/organizertool/ui/main.py`. Dort sind dunkle Farbtöne eingestellt (#1e1e1e). Du kannst sie anpassen.
+- Die Farben der Oberfläche stellst du über die Umgebungsvariable `ORGANIZER_THEME` ein. Vier Themes (Farbvorlagen) sind vorhanden: `dark`, `light`, `blue` und `contrast`.
+Beispiel:
+```bash
+export ORGANIZER_THEME=light
+```
 - Die Sidebar blendest du durch Klick auf "Hauptübersicht" ein oder aus.
 - Starte das Modul "Alias- und Tastenkombis", um nützliche Kurzbefehle zu sehen.
 - Mit `cd ordnername` wechselst du den Ordner ("Directory").

@@ -11,6 +11,8 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtCore import Qt
 
+from .theme import get_current_theme
+
 from .modules import (
     BaseModule,
     FileNameSearchModule,
@@ -28,22 +30,9 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Organizer Tool")
         self.resize(800, 600)
 
-        # Apply simple high-contrast colors for better visibility
-        self.setStyleSheet(
-            """
-            QMainWindow {
-                background-color: #1e1e1e;
-                color: #eeeeee;
-            }
-            QToolBar {
-                background-color: #3c3c3c;
-                color: #ffffff;
-            }
-            QLabel {
-                color: #eeeeee;
-            }
-            """
-        )
+        # Apply theme from environment variable ORGANIZER_THEME
+        # Available themes: dark, light, blue, contrast
+        self.setStyleSheet(get_current_theme())
 
         # Header dashboard using a toolbar
         toolbar = QToolBar("Dashboard")
