@@ -1,6 +1,7 @@
 import asyncio
+import json
 import os
-from typing import Dict, Iterable, List
+from typing import Dict, Iterable, List, Optional
 
 
 def iter_files(directory: str, recursive: bool = True) -> Iterable[str]:
@@ -66,13 +67,44 @@ FILE_CATEGORIES: Dict[str, List[str]] = {
 }
 
 
-async def categorize_files(directory: str, recursive: bool = True) -> Dict[str, List[str]]:
-    """Return files grouped by predefined categories."""
+def load_categories() -> Dict[str, List[str]]:
+    """Return categories from JSON file defined in ``ORGANIZER_CATEGORIES``.
+
+    The environment variable should point to a JSON file with a mapping of
+    category names to lists of file extensions. If the variable is not set,
+    ``FILE_CATEGORIES`` is returned.
+    """
+
+    cfg_path = os.getenv("ORGANIZER_CATEGORIES")
+    if not cfg_path:
+        return FILE_CATEGORIES
+    try:
+        with open(cfg_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        if isinstance(data, dict):
+            return {str(k): list(map(str, v)) for k, v in data.items()}
+    except Exception:
+        pass
+    return FILE_CATEGORIES
+
+
+async def categorize_files(
+    directory: str,
+    recursive: bool = True,
+    categories: Optional[Dict[str, List[str]]] = None,
+) -> Dict[str, List[str]]:
+    """Return files grouped by categories.
+
+    If ``categories`` is ``None``, the categories are loaded via
+    :func:`load_categories`.
+    """
+
+    cats = categories or load_categories()
 
     def scan() -> Dict[str, List[str]]:
-        results: Dict[str, List[str]] = {cat: [] for cat in FILE_CATEGORIES}
+        results: Dict[str, List[str]] = {cat: [] for cat in cats}
         for path in iter_files(directory, recursive):
-            for cat, exts in FILE_CATEGORIES.items():
+            for cat, exts in cats.items():
                 if any(path.lower().endswith(e) for e in exts):
                     results[cat].append(path)
         return results

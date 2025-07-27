@@ -33,6 +33,29 @@ Den Stil des Codes prüfst du mit `flake8` ("Linter" = Programm, das auf Fehler 
 ```bash
 flake8 src/organizertool
 ```
+Die Formatierung übernimmst du mit `black` ("Formatter" = automatisches Formatieren des Codes):
+
+```bash
+black src/organizertool tests
+```
+
+Die Typen checkst du mit `mypy` ("Type Checker" = Programm, das auf passende Datentypen achtet):
+
+```bash
+mypy src/organizertool tests
+```
+Mit `make check` fuehrst du Tests und Lint in einem Schritt aus:
+
+```bash
+make check
+```
+
+Installierte Pakete kannst du überprüfen ("Dependency Check" = Kontrolle der Abhängigkeiten):
+
+```bash
+make deps
+```
+
 
 Um einzelne Module im Python-Interpreter zu testen, kannst du Folgendes eingeben:
 
@@ -63,6 +86,26 @@ und Text. Zukünftig sollen folgende Funktionen ausgebaut werden:
 - Mediendateien konvertieren
 - Informationen zu Aliasen und Tastenkombinationen anzeigen
 
+### Eigene Kategorien definieren
+
+Lege eine Datei `categories.json` an und fülle sie so:
+
+```json
+{
+  "dokumente": [".pdf", ".docx"],
+  "python": [".py"]
+}
+```
+
+Setze dann die Umgebungsvariable ("Environment Variable" = Systemeinstellung)
+`ORGANIZER_CATEGORIES` auf den Pfad dieser Datei, zum Beispiel:
+
+```bash
+export ORGANIZER_CATEGORIES=/pfad/zur/categories.json
+```
+
+Starte danach die GUI erneut, um deine Kategorien zu sehen.
+
 ## Hinweise für Laien
 
 - "GUI" steht für *Graphical User Interface* (grafische Benutzeroberfläche)
@@ -84,8 +127,11 @@ Weitere Vorschläge findest du in `todo.txt`.
 - Um nach einem anderen Begriff zu suchen, passe die Parameter in den Modulen an, z.B. `FileNameSearchModule.create('.', 'mein_wort')`.
 - Mit `pytest` führst du automatische Tests aus ("Tests" prüfen Funktionen).
 - `flake8` prüft die Code-Qualität und weist auf Formatierungsfehler hin ("Linter").
+- `black` formatiert den Code automatisch ("Formatter" = Formatierungswerkzeug).
+- `mypy` kontrolliert die Typangaben ("Type Checker" = Programm für Datentypen).
 - `python -m organizertool.ui.main` startet die grafische Oberfläche.
 - Mit `python -m pip install -U -r requirements.txt` aktualisierst du alle Pakete (Pakete = Bibliotheken).
+- `make deps` überprüft installierte Pakete ("Dependency Check" = Kontrolle der Abhängigkeiten).
 - Die Farben der Oberfläche findest du in `src/organizertool/ui/main.py`. Dort sind dunkle Farbtöne eingestellt (#1e1e1e). Du kannst sie anpassen.
 - Die Sidebar blendest du durch Klick auf "Hauptübersicht" ein oder aus.
 - Starte das Modul "Alias- und Tastenkombis", um nützliche Kurzbefehle zu sehen.
@@ -98,3 +144,15 @@ Weitere Vorschläge findest du in `todo.txt`.
 - Eine Datei löschen: `rm -i meine_datei.txt` ("rm" l\u00f6scht Dateien, `-i` fragt sicherheitshalber nach).
 - Datei kopieren: `cp quelle ziel` ("cp" = Kopieren einer Datei).
 - Datei verschieben oder umbenennen: `mv quelle ziel` ("mv" = Move/Rename).
+- Mit `ls -la` siehst du Details zu Dateien ("-la" zeigt versteckte Dateien und Berechtigungen).
+- Installierte Pakete mit Versionen speicherst du in `requirements.txt`:
+  ```bash
+  pip freeze > requirements.txt
+  ```
+- Anleitung für Mitwirkende findest du in [CONTRIBUTING.md](CONTRIBUTING.md).
+- Aktuelle Version anzeigen ("Version" = Programmstand):
+  ```bash
+  python -c "import organizertool; print(organizertool.__version__)"
+  ```
+- Änderungen nachschlagen: `cat CHANGELOG.md` ("Changelog" = Liste aller Neuerungen).
+

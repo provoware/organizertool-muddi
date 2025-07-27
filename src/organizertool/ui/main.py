@@ -68,9 +68,7 @@ class MainWindow(QMainWindow):
 
         # Toggle sidebar via header label click (simple example)
         action = toolbar.actions()[0]
-        toolbar.widgetForAction(action).mousePressEvent = (
-            lambda event: sidebar.setVisible(not sidebar.isVisible())
-        )
+        toolbar.widgetForAction(action).mousePressEvent = lambda event: sidebar.setVisible(not sidebar.isVisible())
 
     def load_modules(self) -> None:
         """Create placeholder modules and show them."""
