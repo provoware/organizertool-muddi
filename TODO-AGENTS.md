@@ -1,7 +1,6 @@
 # Offene Agent-Aufgaben
 
 - Globale Zustände kapseln und Utilities zusammenführen
-- Formatter und Linter (black, flake8) sowie Typprüfung (mypy) einrichten
 - Asynchrone Ausführung mit Abbruch- und Retry-Hooks vorsehen
 - Pipeline für Lint, Tests und Builds erstellen
 - Automatische Prüfung der Abhängigkeiten einrichten

@@ -33,6 +33,17 @@ Den Stil des Codes prüfst du mit `flake8` ("Linter" = Programm, das auf Fehler 
 ```bash
 flake8 src/organizertool
 ```
+Die Formatierung übernimmst du mit `black` ("Formatter" = automatisches Formatieren des Codes):
+
+```bash
+black src/organizertool tests
+```
+
+Die Typen checkst du mit `mypy` ("Type Checker" = Programm, das auf passende Datentypen achtet):
+
+```bash
+mypy src/organizertool tests
+```
 Mit `make check` fuehrst du Tests und Lint in einem Schritt aus:
 
 ```bash
@@ -110,6 +121,8 @@ Weitere Vorschläge findest du in `todo.txt`.
 - Um nach einem anderen Begriff zu suchen, passe die Parameter in den Modulen an, z.B. `FileNameSearchModule.create('.', 'mein_wort')`.
 - Mit `pytest` führst du automatische Tests aus ("Tests" prüfen Funktionen).
 - `flake8` prüft die Code-Qualität und weist auf Formatierungsfehler hin ("Linter").
+- `black` formatiert den Code automatisch ("Formatter" = Formatierungswerkzeug).
+- `mypy` kontrolliert die Typangaben ("Type Checker" = Programm für Datentypen).
 - `python -m organizertool.ui.main` startet die grafische Oberfläche.
 - Mit `python -m pip install -U -r requirements.txt` aktualisierst du alle Pakete (Pakete = Bibliotheken).
 - Die Farben der Oberfläche findest du in `src/organizertool/ui/main.py`. Dort sind dunkle Farbtöne eingestellt (#1e1e1e). Du kannst sie anpassen.

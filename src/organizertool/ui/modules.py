@@ -108,7 +108,10 @@ class MediaConvertModule(BaseModule):
 
     @classmethod
     def create(cls) -> "MediaConvertModule":
-        return cls.create_dummy("Mediendateien konvertieren")
+        from typing import cast
+
+        dummy = cls.create_dummy("Mediendateien konvertieren")
+        return cast(MediaConvertModule, dummy)
 
 
 class AliasInfoModule(BaseModule):

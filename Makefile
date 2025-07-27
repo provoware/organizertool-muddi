@@ -1,10 +1,19 @@
-.PHONY: lint test check
+.PHONY: lint test check fmt fmt-check typecheck
 
 lint:
-	flake8 src/organizertool tests
+        flake8 src/organizertool tests
 
 test:
-	PYTHONPATH=src pytest -q
+        PYTHONPATH=src pytest -q
 
-check: lint test
+fmt:
+        black src/organizertool tests
+
+fmt-check:
+        black --check src/organizertool tests
+
+typecheck:
+        mypy src/organizertool tests
+
+check: fmt-check lint test typecheck
 

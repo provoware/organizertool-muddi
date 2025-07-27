@@ -5,6 +5,7 @@ from .search import (
     search_text,
     list_filetypes,
     categorize_files,
+    load_categories,
     FILE_CATEGORIES,
 )
 
@@ -13,5 +14,6 @@ __all__ = [
     "search_text",
     "list_filetypes",
     "categorize_files",
+    "load_categories",
     "FILE_CATEGORIES",
 ]
