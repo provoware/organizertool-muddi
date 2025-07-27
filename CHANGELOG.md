@@ -1,15 +1,19 @@
 # Changelog
 
-Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
+Alle wichtigen Aenderungen an diesem Projekt werden hier dokumentiert.
 
-## [0.1.1] - 2025-07-27
-### Hinzugefügt
-- Datei `CHANGELOG.md` eingeführt
-- Version im Paket festgelegt
+## [0.1.3] - 2025-07-27
+### Hinzugefuegt
+- Automatisches Build-Skript (scripts/build_package.sh)
 
 ## [0.1.2] - 2025-07-27
-### Hinzugefügt
+### Hinzugefuegt
 - Einfache Kommandozeile (cli.py) mit Suchbefehlen und GUI-Start
+
+## [0.1.1] - 2025-07-27
+### Hinzugefuegt
+- Datei `CHANGELOG.md` eingefuehrt
+- Version im Paket festgelegt
 
 ## [0.1.0] - 2025-07-26
 ### Erstes Release

@@ -192,11 +192,11 @@ export ORGANIZER_THEME=light
 -  ```bash
 -  pip freeze > requirements.txt
 -  ```
--  Ein Paket für die Veröffentlichung baust du mit:
+-  Ein Paket für die Veröffentlichung baust du bequem per Skript:
 -  ```bash
--  python -m pip install build
--  python -m build
+-  ./scripts/build_package.sh
 -  ```
+-  Das Skript installiert automatisch das Build-Werkzeug und erzeugt das Paket ("Package" = Installationsarchiv).
 - Anleitung für Mitwirkende findest du in [CONTRIBUTING.md](CONTRIBUTING.md).
 - Aktuelle Version anzeigen ("Version" = Programmstand):
   ```bash

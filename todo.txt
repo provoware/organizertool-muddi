@@ -47,4 +47,5 @@
 - Datei sicher in den Papierkorb legen: python -c "from organizertool import safe_remove; safe_remove('datei.txt')"
 - GUI über die Kommandozeile starten: `python -m organizertool gui`
 - Dateien nach Namen suchen: `python -m organizertool search-name ORDNER wort`
-- Vor dem Release ein Paket bauen: `python -m pip install build && python -m build`
+- Vor dem Release ein Paket bauen: `./scripts/build_package.sh`
+- Fertiges Paket findest du nach dem Build im Ordner `dist` ("dist" = Verteilsatz).
