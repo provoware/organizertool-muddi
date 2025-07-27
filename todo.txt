@@ -49,6 +49,7 @@
 - GUI über die Kommandozeile starten: `python -m organizertool gui`
 - Dateien nach Namen suchen: `python -m organizertool search-name ORDNER wort`
 - Vor dem Release ein Paket bauen: `./scripts/build_package.sh`
+- Alternativ erstellt `python -m build` ebenfalls ein Installationspaket (build = Paket bauen).
 - Fertiges Paket findest du nach dem Build im Ordner `dist` ("dist" = Verteilsatz).
 - Hilfetexte anzeigen: `python -m organizertool tips`
 

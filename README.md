@@ -240,5 +240,15 @@ Weitere Vorschläge findest du in `todo.txt`.
   ```bash
   ./scripts/one_click_start.sh
   ```
-  Dieses Skript richtet alles automatisch ein und öffnet die GUI.
+Dieses Skript richtet alles automatisch ein und öffnet die GUI.
+
+## Release vorbereiten
+
+Mit folgendem Befehl baust du ein Installationspaket ("Package" = Archiv zur Installation):
+
+```bash
+python -m build
+```
+
+Das fertige Paket liegt anschliessend im Ordner `dist`.
 

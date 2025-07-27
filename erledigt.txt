@@ -30,3 +30,4 @@ Build-Skript hinzugefügt (scripts/build_package.sh)
 Schriftgröße lässt sich jetzt über Variable und GUI einstellen
 CLI-Befehl 'tips' zeigt Hilfstexte
 Ein-Klick-Start-Skript one_click_start.sh hinzugefügt
+Version 1.0.0 veröffentlicht und Projekt abgeschlossen

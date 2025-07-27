@@ -2,6 +2,11 @@
 
 Alle wichtigen Aenderungen an diesem Projekt werden hier dokumentiert.
 
+## [1.0.0] - 2025-07-27
+### Hinzugefuegt
+- Abschluss der Basisfunktionen mit grafischer Oberfläche und sicherem Papierkorb
+- Ein-Klick-Start und einfache CLI erleichtern die Bedienung
+
 ## [0.1.6] - 2025-07-27
 ### Hinzugefuegt
 - Ein-Klick-Start-Skript `one_click_start.sh` richtet eine virtuelle Umgebung ein, installiert Abhaengigkeiten und startet die GUI

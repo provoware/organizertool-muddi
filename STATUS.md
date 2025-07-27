@@ -1,3 +1,3 @@
 # Projektstatus
 
-Fortschritt bis zum Release: 99%
+Fortschritt bis zum Release: 100%
