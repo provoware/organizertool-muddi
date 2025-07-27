@@ -20,4 +20,3 @@ def create_main_window():
 
 
 __all__ = ["run_app", "create_main_window", "VERSION"]
-

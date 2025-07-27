@@ -15,3 +15,6 @@
 - Programm mit `python -m organizertool.ui.main` starten
 - Tests ausführen: `pytest`
 - Code-Qualität prüfen: `flake8 src/organizertool`
+- Pakete aktualisieren: `python -m pip install -U -r requirements.txt`
+- Farben der GUI in `src/organizertool/ui/main.py` anpassen
+- Sidebar mit Klick auf "Hauptübersicht" ein-/ausblenden

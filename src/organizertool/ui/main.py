@@ -28,6 +28,23 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Organizer Tool")
         self.resize(800, 600)
 
+        # Apply simple high-contrast colors for better visibility
+        self.setStyleSheet(
+            """
+            QMainWindow {
+                background-color: #1e1e1e;
+                color: #eeeeee;
+            }
+            QToolBar {
+                background-color: #3c3c3c;
+                color: #ffffff;
+            }
+            QLabel {
+                color: #eeeeee;
+            }
+            """
+        )
+
         # Header dashboard using a toolbar
         toolbar = QToolBar("Dashboard")
         toolbar.setMovable(False)
@@ -50,7 +67,10 @@ class MainWindow(QMainWindow):
         sidebar.setVisible(False)
 
         # Toggle sidebar via header label click (simple example)
-        toolbar.widgetForAction(toolbar.actions()[0]).mousePressEvent = lambda event: sidebar.setVisible(not sidebar.isVisible())
+        action = toolbar.actions()[0]
+        toolbar.widgetForAction(action).mousePressEvent = (
+            lambda event: sidebar.setVisible(not sidebar.isVisible())
+        )
 
     def load_modules(self) -> None:
         """Create placeholder modules and show them."""
@@ -77,4 +97,3 @@ def run_app() -> None:
 
 if __name__ == "__main__":
     run_app()
-

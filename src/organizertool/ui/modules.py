@@ -14,6 +14,7 @@ from ..services import (
 
 data_view = QLabel
 
+
 @dataclass
 class BaseModule:
     """Simple container for Module information."""
@@ -126,4 +127,3 @@ __all__ = [
     "MediaConvertModule",
     "AliasInfoModule",
 ]
-
