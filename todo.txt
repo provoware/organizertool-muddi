@@ -35,3 +35,4 @@
 - Für Entwickler: Anleitung in CONTRIBUTING.md lesen
 - Aktuelle Programmversion anzeigen: `python -c "import organizertool; print(organizertool.__version__)"`
 - Letzte Änderungen lesen: `cat CHANGELOG.md`
+- GUI auch per Python starten: 'python -c "import organizertool; organizertool.run_app()"'
