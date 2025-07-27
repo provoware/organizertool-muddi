@@ -1,6 +1,10 @@
 # Changelog
 
 Alle wichtigen Aenderungen an diesem Projekt werden hier dokumentiert.
+## [1.0.2] - 2025-07-27
+### Hinzugefuegt
+- Dokumentiert barrierefreien Modus mit hohem Kontrast und grosser Schrift
+
 
 ## [1.0.1] - 2025-07-27
 ### Hinzugefuegt

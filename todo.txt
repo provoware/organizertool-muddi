@@ -57,3 +57,7 @@
 - Umgebung prüfen: `python -m organizertool diagnose`
 - Python-Version anzeigen: `python --version`
 - Pakete überprüfen: `python -m pip check`
+- Barrierefreien Modus aktivieren:
+  export ORGANIZER_THEME=contrast
+  export ORGANIZER_FONT_SIZE=16
+  python -m organizertool gui

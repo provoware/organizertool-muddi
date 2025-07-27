@@ -260,7 +260,14 @@ Dieses Skript richtet alles automatisch ein und öffnet die GUI.
 - Überprüfe installierte Pakete mit:
   ```bash
   python -m pip check
+
+- Für bessere Lesbarkeit kannst du ein kontrastreiches Theme aktivieren und die Schrift vergrößern:
+  ```bash
+  export ORGANIZER_THEME=contrast
+  export ORGANIZER_FONT_SIZE=16
+  python -m organizertool gui
   ```
+  Dabei steht *Theme* für Farbvorlage und *Font Size* für Schriftgröße.
 
 ## Release vorbereiten
 
