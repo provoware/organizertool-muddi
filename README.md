@@ -96,6 +96,12 @@ Dateien nach Endung auflisten:
 python -m organizertool list-types ORDNER .py .txt
 ```
 
+Umgebung prüfen und reparieren:
+
+```bash
+python -m organizertool diagnose
+```
+
 
 Um einzelne Module im Python-Interpreter zu testen, kannst du Folgendes eingeben:
 
@@ -236,6 +242,12 @@ Weitere Vorschläge findest du in `todo.txt`.
   python -m organizertool tips
   ```
   Damit liest du die Hinweise aus `todo.txt` direkt im Terminal.
+- Die Umgebung prüfst und reparierst du mit:
+  ```bash
+  python -m organizertool diagnose
+  ```
+  Dabei wird die Einstellungsdatei angelegt, falls sie fehlt, und
+  du siehst Hinweise zur Python-Version und zu Kategorien.
 - Ein besonders einfacher Start gelingt mit:
   ```bash
   ./scripts/one_click_start.sh

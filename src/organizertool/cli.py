@@ -2,9 +2,13 @@ import argparse
 import asyncio
 from typing import List
 from pathlib import Path
+import os
+import sys
 
 from . import __version__, run_app
 from .services import search
+from .core.settings import get_settings_path, save_settings
+from .core.constants import ENV_CATEGORIES
 
 
 def _search_names(args: argparse.Namespace) -> None:
@@ -30,6 +34,28 @@ def _show_tips(_: argparse.Namespace) -> None:
         print("Tip-Datei nicht gefunden")
         return
     print(text)
+
+
+def _diagnose(_: argparse.Namespace) -> None:
+    """Simple environment check mit Selbstreparatur."""
+
+    print("Starte Diagnose...")
+    settings_path = get_settings_path()
+    if settings_path.exists():
+        print(f"Einstellungsdatei gefunden: {settings_path}")
+    else:
+        print(f"Einstellungsdatei fehlt, erstelle {settings_path}")
+        save_settings({})
+    cat_file = os.getenv(ENV_CATEGORIES)
+    if cat_file:
+        if os.path.exists(cat_file):
+            print(f"Kategorien-Datei gefunden: {cat_file}")
+        else:
+            print(f"Achtung: Kategorien-Datei nicht gefunden: {cat_file}")
+    else:
+        print("Keine Kategorien-Datei gesetzt (ORGANIZER_CATEGORIES)")
+    version = ".".join(map(str, sys.version_info[:3]))
+    print(f"Python-Version: {version}")
 
 
 def _search_text(args: argparse.Namespace) -> None:
@@ -103,11 +129,15 @@ def main(argv: List[str] | None = None) -> None:
     tips_p = sub.add_parser("tips", help="Tipps für Einsteiger anzeigen")
     tips_p.set_defaults(func=_show_tips)
 
+    diag_p = sub.add_parser("diagnose", help="Umgebung prüfen und reparieren")
+    diag_p.set_defaults(func=_diagnose)
+
     args = parser.parse_args(argv)
     if hasattr(args, "func"):
         args.func(args)
     else:
         parser.print_help()
+        print("Tipp: Mehr Hinweise mit 'python -m organizertool tips'")
 
 
 if __name__ == "__main__":

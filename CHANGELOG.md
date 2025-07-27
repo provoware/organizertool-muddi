@@ -2,6 +2,12 @@
 
 Alle wichtigen Aenderungen an diesem Projekt werden hier dokumentiert.
 
+## [1.0.1] - 2025-07-27
+### Hinzugefuegt
+- CLI-Befehl `diagnose` prüft die Umgebung und legt fehlende Dateien an
+- Fehlermeldung, wenn Verzeichnisse in Suchfunktionen fehlen
+- README und Tipps um "diagnose" erweitert
+
 ## [1.0.0] - 2025-07-27
 ### Hinzugefuegt
 - Abschluss der Basisfunktionen mit grafischer Oberfläche und sicherem Papierkorb

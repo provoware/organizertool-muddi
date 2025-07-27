@@ -54,3 +54,4 @@
 - Hilfetexte anzeigen: `python -m organizertool tips`
 
 - Mit `./scripts/one_click_start.sh` richtest du automatisch eine virtuelle Umgebung ein und startest das Programm.
+- Umgebung prüfen: `python -m organizertool diagnose`
