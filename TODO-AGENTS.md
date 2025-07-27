@@ -14,7 +14,6 @@
 - Modul zur Sortierung nach Dateikategorien wie Text oder Video weiter ausbauen
 - Eigene Kategorien definierbar machen
 - Modul zur Konvertierung von Mediendateien
-- Modul zur Anzeige von Aliasen und Tastenkombinationen
 - Weitere Tests für Such- und GUI-Module schreiben
 - Lint- und Test-Befehle automatisieren
 - Mobiles Layout der GUI weiter optimieren

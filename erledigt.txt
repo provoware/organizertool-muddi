@@ -9,4 +9,5 @@ Hilfsfunktion ``iter_files`` eingeführt, um Dateidurchläufe zu vereinheitliche
 Erste Pytest-Tests für Suchfunktionen erstellt
 
 GUI-Farben für bessere Sichtbarkeit angepasst
+Alias-Info-Modul mit realen Inhalten erstellt
 

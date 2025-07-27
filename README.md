@@ -88,3 +88,7 @@ Weitere Vorschläge findest du in `todo.txt`.
 - Mit `python -m pip install -U -r requirements.txt` aktualisierst du alle Pakete (Pakete = Bibliotheken).
 - Die Farben der Oberfläche findest du in `src/organizertool/ui/main.py`. Dort sind dunkle Farbtöne eingestellt (#1e1e1e). Du kannst sie anpassen.
 - Die Sidebar blendest du durch Klick auf "Hauptübersicht" ein oder aus.
+- Starte das Modul "Alias- und Tastenkombis", um nützliche Kurzbefehle zu sehen.
+- Mit `cd ordnername` wechselst du den Ordner ("Directory").
+- `mkdir neuer_ordner` legt einen neuen Ordner an ("make directory").
+- Drücke `F11`, um die GUI im Vollbild zu sehen ("Fullscreen").

@@ -7,7 +7,7 @@
 - Modul zum Suchen nach Dateikategorien wie Textdateien oder Videos
 - Eigene Kategorien definieren und durchsuchen
 - Modul zur Konvertierung von Mediendateien programmieren
-- Modul zum Anzeigen von Aliasen und Tastenkombinationen
+- Modul "Alias- und Tastenkombis" in der GUI ausprobieren
 - Programm testen: `python -m organizertool.ui.main`
 - Für andere Suchbegriffe Parameter ändern, z.B. `FileNameSearchModule.create('.', 'wort')`
 - Python-Umgebung (virtual environment) mit `python3 -m venv venv` erstellen
@@ -18,3 +18,6 @@
 - Pakete aktualisieren: `python -m pip install -U -r requirements.txt`
 - Farben der GUI in `src/organizertool/ui/main.py` anpassen
 - Sidebar mit Klick auf "Hauptübersicht" ein-/ausblenden
+- Ordner wechseln: `cd ordnername`
+- Neuen Ordner anlegen: `mkdir neuer_ordner`
+- Vollbildmodus der GUI mit `F11` einschalten

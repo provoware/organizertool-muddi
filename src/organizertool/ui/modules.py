@@ -111,11 +111,32 @@ class MediaConvertModule(BaseModule):
 
 
 class AliasInfoModule(BaseModule):
-    """Placeholder for showing alias and shortcut information."""
+    """Display useful shell aliases and keyboard shortcuts."""
+
+    ALIASES = {
+        "ll": "ls -la  # zeigt Dateien mit Details",
+        "gs": "git status  # aktuellen Git-Zustand anzeigen",
+    }
+
+    SHORTCUTS = {
+        "Ctrl+C": "bricht laufenden Prozess ab",
+        "Ctrl+Shift+T": "öffnet neues Terminalfenster",
+    }
 
     @classmethod
     def create(cls) -> "AliasInfoModule":
-        return cls.create_dummy("Alias- und Tastenkombi-Info")
+        widget = QWidget()
+        layout = QVBoxLayout()
+        layout.addWidget(QLabel("Aliase (kurze Befehle):"))
+        for name, desc in cls.ALIASES.items():
+            layout.addWidget(QLabel(f"{name}: {desc}"))
+
+        layout.addWidget(QLabel("Tastenkombinationen:"))
+        for combo, desc in cls.SHORTCUTS.items():
+            layout.addWidget(QLabel(f"{combo}: {desc}"))
+
+        widget.setLayout(layout)
+        return cls(name="Alias- und Tastenkombis", widget=widget)
 
 
 __all__ = [
