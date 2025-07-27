@@ -1,6 +1,7 @@
 # Organizer Tool Muddi
 
 Dieses Projekt soll ein modular aufgebautes Werkzeug für Linux bereitstellen. Es enthält eine grafische Hauptoberfläche mit Header und einklappbarer Sidebar.
+Den aktuellen Fortschritt findest du in der Datei `STATUS.md`.
 
 ## Installation
 
@@ -20,6 +21,16 @@ pip install pytest flake8 pytest-asyncio
 
 ```bash
 python -m organizertool.ui.main
+```
+
+### Ein-Klick-Start
+
+Dieses Skript erstellt bei Bedarf eine virtuelle Umgebung ("virtual environment" = isolierte Arbeitsumgebung),
+installiert automatisch alle Abhängigkeiten ("Dependencies" = benötigte Pakete)
+und startet sofort die grafische Oberfläche:
+
+```bash
+./scripts/one_click_start.sh
 ```
 
 Tests führst du so aus ("Test" = automatische Überprüfung):
@@ -54,6 +65,41 @@ Installierte Pakete kannst du überprüfen ("Dependency Check" = Kontrolle der A
 
 ```bash
 make deps
+```
+
+## Kommandozeile (CLI)
+
+Mit einem einfachen Kommando kannst du die grafische Oberfläche oder Suchbefehle
+starten. "CLI" steht für *Command Line Interface* (Befehlszeile).
+
+GUI öffnen:
+
+```bash
+python -m organizertool gui
+```
+
+Dateien nach Namen durchsuchen:
+
+```bash
+python -m organizertool search-name ORDNER suchwort
+```
+
+Text in Dateien finden:
+
+```bash
+python -m organizertool search-text ORDNER suchwort
+```
+
+Dateien nach Endung auflisten:
+
+```bash
+python -m organizertool list-types ORDNER .py .txt
+```
+
+Umgebung prüfen und reparieren:
+
+```bash
+python -m organizertool diagnose
 ```
 
 
@@ -132,8 +178,22 @@ Weitere Vorschläge findest du in `todo.txt`.
 - `python -m organizertool.ui.main` startet die grafische Oberfläche.
 - Mit `python -m pip install -U -r requirements.txt` aktualisierst du alle Pakete (Pakete = Bibliotheken).
 - `make deps` überprüft installierte Pakete ("Dependency Check" = Kontrolle der Abhängigkeiten).
-- Die Farben der Oberfläche findest du in `src/organizertool/ui/main.py`. Dort sind dunkle Farbtöne eingestellt (#1e1e1e). Du kannst sie anpassen.
+- Die Farben der Oberfläche stellst du über die Umgebungsvariable `ORGANIZER_THEME` ein. Vier Themes (Farbvorlagen) sind vorhanden: `dark`, `light`, `blue` und `contrast`.
+  Beispiel:
+  ```bash
+  export ORGANIZER_THEME=light
+  ```
+  Du kannst das Theme auch direkt in der GUI über ein Auswahlfeld ändern. Die
+  Auswahl wird in `~/.organizertool/settings.json` gespeichert ("Settings-Datei" = Ablage für Einstellungen).
+- Die Schriftgröße passt du über die Variable `ORGANIZER_FONT_SIZE` an.
+  Beispiel für größere Schrift:
+  ```bash
+  export ORGANIZER_FONT_SIZE=14
+  ```
+  Auch in der GUI gibt es dafür eine Auswahlliste.
+- Mit der Variablen `ORGANIZER_SETTINGS` kannst du den Ort dieser Datei ändern.
 - Die Sidebar blendest du durch Klick auf "Hauptübersicht" ein oder aus.
+- Bei schmalem Fenster versteckt sich die Sidebar automatisch.
 - Starte das Modul "Alias- und Tastenkombis", um nützliche Kurzbefehle zu sehen.
 - Mit `cd ordnername` wechselst du den Ordner ("Directory").
 - `mkdir neuer_ordner` legt einen neuen Ordner an ("make directory").
@@ -142,17 +202,80 @@ Weitere Vorschläge findest du in `todo.txt`.
 - Neue Datei anlegen: `touch meine_datei.txt` ("touch" legt eine leere Datei an).
 - Inhalt einer Datei anzeigen: `cat meine_datei.txt` ("cat" zeigt Textdateien an).
 - Eine Datei löschen: `rm -i meine_datei.txt` ("rm" l\u00f6scht Dateien, `-i` fragt sicherheitshalber nach).
+- Sicher löschen über den Papierkorb:
+  ```bash
+  python -c "from organizertool import safe_remove; safe_remove('meine_datei.txt')"
+  ```
+  Dabei wird die Datei in den System-Papierkorb verschoben ("Trash" = Ablage für gelöschte Daten).
 - Datei kopieren: `cp quelle ziel` ("cp" = Kopieren einer Datei).
 - Datei verschieben oder umbenennen: `mv quelle ziel` ("mv" = Move/Rename).
 - Mit `ls -la` siehst du Details zu Dateien ("-la" zeigt versteckte Dateien und Berechtigungen).
 - Installierte Pakete mit Versionen speicherst du in `requirements.txt`:
-  ```bash
-  pip freeze > requirements.txt
-  ```
+-  ```bash
+-  pip freeze > requirements.txt
+-  ```
+-  Ein Paket für die Veröffentlichung baust du bequem per Skript:
+-  ```bash
+-  ./scripts/build_package.sh
+-  ```
+-  Das Skript installiert automatisch das Build-Werkzeug und erzeugt das Paket ("Package" = Installationsarchiv).
 - Anleitung für Mitwirkende findest du in [CONTRIBUTING.md](CONTRIBUTING.md).
 - Aktuelle Version anzeigen ("Version" = Programmstand):
   ```bash
   python -c "import organizertool; print(organizertool.__version__)"
   ```
 - Änderungen nachschlagen: `cat CHANGELOG.md` ("Changelog" = Liste aller Neuerungen).
+- Bei Fehlermeldungen wiederholt die Funktion `run_with_retry` einen Vorgang automatisch ("Retry" = erneuter Versuch).
+- Beispiel zum Abbrechen eines Vorgangs:
+  ```python
+  import asyncio
+  from organizertool import run_with_retry
+
+  async def meine_aufgabe():
+      raise RuntimeError("kaputt")
+
+  await run_with_retry(meine_aufgabe, retries=3)
+  ```
+- Unten zeigt eine Statusleiste kurze Hinweise an ("Statusbar" = Leiste am Fensterrand).
+- Hilfetexte kannst du über die Kommandozeile abrufen:
+  ```bash
+  python -m organizertool tips
+  ```
+  Damit liest du die Hinweise aus `todo.txt` direkt im Terminal.
+- Die Umgebung prüfst und reparierst du mit:
+  ```bash
+  python -m organizertool diagnose
+  ```
+  Dabei wird die Einstellungsdatei angelegt, falls sie fehlt, und
+  du siehst Hinweise zur Python-Version und zu Kategorien.
+- Ein besonders einfacher Start gelingt mit:
+  ```bash
+  ./scripts/one_click_start.sh
+  ```
+Dieses Skript richtet alles automatisch ein und öffnet die GUI.
+- Deine Python-Version kannst du so prüfen:
+  ```bash
+  python --version
+  ```
+- Überprüfe installierte Pakete mit:
+  ```bash
+  python -m pip check
+
+- Für bessere Lesbarkeit kannst du ein kontrastreiches Theme aktivieren und die Schrift vergrößern:
+  ```bash
+  export ORGANIZER_THEME=contrast
+  export ORGANIZER_FONT_SIZE=16
+  python -m organizertool gui
+  ```
+  Dabei steht *Theme* für Farbvorlage und *Font Size* für Schriftgröße.
+
+## Release vorbereiten
+
+Mit folgendem Befehl baust du ein Installationspaket ("Package" = Archiv zur Installation):
+
+```bash
+python -m build
+```
+
+Das fertige Paket liegt anschliessend im Ordner `dist`.
 

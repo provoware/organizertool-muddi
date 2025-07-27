@@ -8,8 +8,18 @@ from PySide6.QtWidgets import (
     QToolBar,
     QWidget,
     QVBoxLayout,
+    QComboBox,
 )
 from PySide6.QtCore import Qt
+
+from .theme import (
+    get_current_theme,
+    set_current_theme,
+    THEMES,
+    get_current_theme_name,
+    get_current_font_size,
+    set_current_font_size,
+)
 
 from .modules import (
     BaseModule,
@@ -28,28 +38,29 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Organizer Tool")
         self.resize(800, 600)
 
-        # Apply simple high-contrast colors for better visibility
-        self.setStyleSheet(
-            """
-            QMainWindow {
-                background-color: #1e1e1e;
-                color: #eeeeee;
-            }
-            QToolBar {
-                background-color: #3c3c3c;
-                color: #ffffff;
-            }
-            QLabel {
-                color: #eeeeee;
-            }
-            """
-        )
+        # Apply theme from environment variable ORGANIZER_THEME
+        # Available themes: dark, light, blue, contrast
+        self.setStyleSheet(get_current_theme())
 
         # Header dashboard using a toolbar
         toolbar = QToolBar("Dashboard")
         toolbar.setMovable(False)
-        self.addToolBar(Qt.TopToolBarArea, toolbar)
+        self.addToolBar(Qt.TopToolBarArea, toolbar)  # type: ignore[attr-defined]
         toolbar.addWidget(QLabel("Hauptübersicht"))
+
+        theme_box = QComboBox()
+        for name in THEMES:
+            theme_box.addItem(name)
+        theme_box.setCurrentText(get_current_theme_name())
+        theme_box.currentTextChanged.connect(self.change_theme)
+        toolbar.addWidget(theme_box)
+
+        font_box = QComboBox()
+        for size in ["8", "10", "12", "14", "16", "18", "20"]:
+            font_box.addItem(size)
+        font_box.setCurrentText(str(get_current_font_size()))
+        font_box.currentTextChanged.connect(self.change_font_size)
+        toolbar.addWidget(font_box)
 
         # Central area lists all loaded modules
         central = QWidget()
@@ -60,15 +71,46 @@ class MainWindow(QMainWindow):
         self.load_modules()
 
         # Right sidebar as dock widget (aufklappbar)
-        sidebar = QDockWidget("Sidebar", self)
-        sidebar.setAllowedAreas(Qt.RightDockWidgetArea)
-        sidebar.setWidget(QLabel("Inhalt der Sidebar"))
-        self.addDockWidget(Qt.RightDockWidgetArea, sidebar)
-        sidebar.setVisible(False)
+        self.sidebar = QDockWidget("Sidebar", self)
+        self.sidebar.setAllowedAreas(Qt.RightDockWidgetArea)  # type: ignore[attr-defined]
+        self.sidebar.setWidget(QLabel("Inhalt der Sidebar"))
+        self.addDockWidget(Qt.RightDockWidgetArea, self.sidebar)  # type: ignore[attr-defined]
+        self.sidebar.setVisible(False)
+
+        # simple status bar for user feedback
+        self.statusBar().showMessage("Bereit")
 
         # Toggle sidebar via header label click (simple example)
         action = toolbar.actions()[0]
-        toolbar.widgetForAction(action).mousePressEvent = lambda event: sidebar.setVisible(not sidebar.isVisible())
+
+        def _toggle(_: object) -> None:
+            self.sidebar.setVisible(not self.sidebar.isVisible())
+
+        toolbar.widgetForAction(action).mousePressEvent = _toggle  # type: ignore[assignment]
+
+    def change_theme(self, name: str) -> None:
+        """Apply and persist selected theme."""
+
+        set_current_theme(name)
+        self.setStyleSheet(get_current_theme())
+        self.statusBar().showMessage(f"Theme gewechselt zu {name}", 2000)
+
+    def change_font_size(self, size: str) -> None:
+        """Adjust and persist the font size."""
+
+        try:
+            value = int(size)
+        except ValueError:
+            value = get_current_font_size()
+        set_current_font_size(value)
+        self.setStyleSheet(get_current_theme())
+        self.statusBar().showMessage(f"Schriftgröße gesetzt auf {value}", 2000)
+
+    def resizeEvent(self, event) -> None:  # type: ignore[override]
+        """Auto-hide sidebar on small window widths."""
+        if self.width() < 600:
+            self.sidebar.setVisible(False)
+        super().resizeEvent(event)
 
     def load_modules(self) -> None:
         """Create placeholder modules and show them."""
