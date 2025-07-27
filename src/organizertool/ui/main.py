@@ -8,10 +8,11 @@ from PySide6.QtWidgets import (
     QToolBar,
     QWidget,
     QVBoxLayout,
+    QComboBox,
 )
 from PySide6.QtCore import Qt
 
-from .theme import get_current_theme
+from .theme import get_current_theme, set_current_theme, THEMES, get_current_theme_name
 
 from .modules import (
     BaseModule,
@@ -40,6 +41,13 @@ class MainWindow(QMainWindow):
         self.addToolBar(Qt.TopToolBarArea, toolbar)
         toolbar.addWidget(QLabel("Hauptübersicht"))
 
+        theme_box = QComboBox()
+        for name in THEMES:
+            theme_box.addItem(name)
+        theme_box.setCurrentText(get_current_theme_name())
+        theme_box.currentTextChanged.connect(self.change_theme)
+        toolbar.addWidget(theme_box)
+
         # Central area lists all loaded modules
         central = QWidget()
         self.central_layout = QVBoxLayout()
@@ -60,6 +68,12 @@ class MainWindow(QMainWindow):
         toolbar.widgetForAction(action).mousePressEvent = lambda event: self.sidebar.setVisible(
             not self.sidebar.isVisible()
         )
+
+    def change_theme(self, name: str) -> None:
+        """Apply and persist selected theme."""
+
+        set_current_theme(name)
+        self.setStyleSheet(get_current_theme())
 
     def resizeEvent(self, event) -> None:  # type: ignore[override]
         """Auto-hide sidebar on small window widths."""

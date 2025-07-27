@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import os
 
+from ..core.settings import load_settings, save_settings
+
 THEMES: dict[str, str] = {
     "dark": """
         QMainWindow { background-color: #1e1e1e; color: #eeeeee; }
@@ -30,8 +32,25 @@ THEMES: dict[str, str] = {
 DEFAULT_THEME = "dark"
 
 
-def get_current_theme() -> str:
-    """Return stylesheet for theme from ORGANIZER_THEME variable."""
+def get_current_theme_name() -> str:
+    """Return the active theme name."""
 
-    name = os.getenv("ORGANIZER_THEME", DEFAULT_THEME).lower()
-    return THEMES.get(name, THEMES[DEFAULT_THEME])
+    env = os.getenv("ORGANIZER_THEME")
+    if env:
+        return env.lower()
+    settings = load_settings()
+    return str(settings.get("theme", DEFAULT_THEME)).lower()
+
+
+def get_current_theme() -> str:
+    """Return stylesheet for the active theme."""
+
+    return THEMES.get(get_current_theme_name(), THEMES[DEFAULT_THEME])
+
+
+def set_current_theme(name: str) -> None:
+    """Persist the chosen theme name."""
+
+    data = load_settings()
+    data["theme"] = name
+    save_settings(data)

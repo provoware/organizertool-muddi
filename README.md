@@ -137,6 +137,8 @@ Beispiel:
 ```bash
 export ORGANIZER_THEME=light
 ```
+- Du kannst das Theme auch direkt in der GUI über ein Auswahlfeld ändern. Die
+  Auswahl wird in `~/.organizertool/settings.json` gespeichert ("Settings-Datei" = Ablage für Einstellungen).
 - Die Sidebar blendest du durch Klick auf "Hauptübersicht" ein oder aus.
 - Bei schmalem Fenster versteckt sich die Sidebar automatisch.
 - Starte das Modul "Alias- und Tastenkombis", um nützliche Kurzbefehle zu sehen.

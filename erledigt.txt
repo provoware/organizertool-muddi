@@ -19,3 +19,4 @@ Alias-Info-Modul mit realen Inhalten erstellt
 - Changelog-Datei erstellt und Version im Paket hinterlegt
 - Farbschema der GUI konfigurierbar gemacht (vier Themes via ORGANIZER_THEME).
 - Mobile Ansicht verbessert: Sidebar blendet sich bei kleiner Fensterbreite automatisch aus
+- Theme-Auswahl wird gespeichert (settings.json)

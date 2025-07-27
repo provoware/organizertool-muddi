@@ -38,3 +38,5 @@
 - GUI auch per Python starten: 'python -c "import organizertool; organizertool.run_app()"'
 - Farbschema mit `export ORGANIZER_THEME=dark` wechseln (Theme=Farbvorlage).
 - Bei schmalem Fenster wird die Sidebar automatisch ausgeblendet
+- Theme im Programm über die Auswahlliste ändern und dauerhaft speichern
+- Gespeicherte Einstellungen ansehen: `cat ~/.organizertool/settings.json`
