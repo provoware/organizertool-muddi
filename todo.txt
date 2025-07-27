@@ -1,0 +1,37 @@
+- Modul für Systemaufräumung erstellen (z.B. temporäre Dateien löschen)
+- Modul zum Finden von Dateiduplikaten entwickeln
+- Weitere Module für Systemaufgaben planen
+- Modul zur Suche nach Wort im Dateinamen erstellen
+- Modul zur Textsuche in Dateien entwickeln
+- Modul zum Finden von Dateitypen in Ordnern (optional rekursiv)
+- Modul zum Suchen nach Dateikategorien wie Textdateien oder Videos
+- Modul zur Konvertierung von Mediendateien programmieren
+- Modul "Alias- und Tastenkombis" in der GUI ausprobieren
+- Programm testen: `python -m organizertool.ui.main`
+- Für andere Suchbegriffe Parameter ändern, z.B. `FileNameSearchModule.create('.', 'wort')`
+- Python-Umgebung (virtual environment) mit `python3 -m venv venv` erstellen
+- Umgebung mit `source venv/bin/activate` aktivieren
+- Programm mit `python -m organizertool.ui.main` starten
+- Tests ausführen: `pytest`
+- Code-Qualität prüfen: `flake8 src/organizertool`
+- Code automatisch formatieren: `black src/organizertool tests`
+- Typprüfung ausführen: `mypy src/organizertool tests`
+- Pakete aktualisieren: `python -m pip install -U -r requirements.txt`
+- Farben der GUI in `src/organizertool/ui/main.py` anpassen
+- Sidebar mit Klick auf "Hauptübersicht" ein-/ausblenden
+- Ordner wechseln: `cd ordnername`
+- Neuen Ordner anlegen: `mkdir neuer_ordner`
+- Vollbildmodus der GUI mit `F11` einschalten
+- Befehlsverlauf ansehen: `history`
+- Leere Datei erstellen: `touch meine_datei.txt`
+- Inhalt anzeigen: `cat meine_datei.txt`
+- Datei vorsichtig löschen: `rm -i meine_datei.txt`
+- Datei kopieren: `cp quelle ziel`
+- Datei verschieben oder umbenennen: `mv quelle ziel`
+- Tests und Lint mit 'make check' ausführen
+- Abhängigkeiten prüfen: make deps
+- Abhängigkeiten in Datei speichern: `pip freeze > requirements.txt`
+- Eigene Dateikategorien per 'categories.json' definieren und mit `export ORGANIZER_CATEGORIES=/pfad/zur/datei.json` aktivieren
+- Für Entwickler: Anleitung in CONTRIBUTING.md lesen
+- Aktuelle Programmversion anzeigen: `python -c "import organizertool; print(organizertool.__version__)"`
+- Letzte Änderungen lesen: `cat CHANGELOG.md`
