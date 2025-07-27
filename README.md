@@ -253,6 +253,14 @@ Weitere Vorschläge findest du in `todo.txt`.
   ./scripts/one_click_start.sh
   ```
 Dieses Skript richtet alles automatisch ein und öffnet die GUI.
+- Deine Python-Version kannst du so prüfen:
+  ```bash
+  python --version
+  ```
+- Überprüfe installierte Pakete mit:
+  ```bash
+  python -m pip check
+  ```
 
 ## Release vorbereiten
 
