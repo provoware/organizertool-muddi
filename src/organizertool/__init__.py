@@ -2,6 +2,8 @@
 
 __version__ = "0.1.1"
 
+from .services.hooks import run_with_retry
+
 
 def run_app() -> None:
     """Start the GUI application."""
@@ -19,4 +21,4 @@ def create_main_window():
     return MainWindow()
 
 
-__all__ = ["run_app", "create_main_window", "__version__"]
+__all__ = ["run_app", "create_main_window", "__version__", "run_with_retry"]

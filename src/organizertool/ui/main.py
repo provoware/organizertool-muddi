@@ -63,6 +63,9 @@ class MainWindow(QMainWindow):
         self.addDockWidget(Qt.RightDockWidgetArea, self.sidebar)
         self.sidebar.setVisible(False)
 
+        # simple status bar for user feedback
+        self.statusBar().showMessage("Bereit")
+
         # Toggle sidebar via header label click (simple example)
         action = toolbar.actions()[0]
         toolbar.widgetForAction(action).mousePressEvent = lambda event: self.sidebar.setVisible(
@@ -74,6 +77,7 @@ class MainWindow(QMainWindow):
 
         set_current_theme(name)
         self.setStyleSheet(get_current_theme())
+        self.statusBar().showMessage(f"Theme gewechselt zu {name}", 2000)
 
     def resizeEvent(self, event) -> None:  # type: ignore[override]
         """Auto-hide sidebar on small window widths."""

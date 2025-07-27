@@ -162,4 +162,16 @@ export ORGANIZER_THEME=light
   python -c "import organizertool; print(organizertool.__version__)"
   ```
 - Änderungen nachschlagen: `cat CHANGELOG.md` ("Changelog" = Liste aller Neuerungen).
+- Bei Fehlermeldungen wiederholt die Funktion `run_with_retry` einen Vorgang automatisch ("Retry" = erneuter Versuch).
+- Beispiel zum Abbrechen eines Vorgangs:
+  ```python
+  import asyncio
+  from organizertool import run_with_retry
+
+  async def meine_aufgabe():
+      raise RuntimeError("kaputt")
+
+  await run_with_retry(meine_aufgabe, retries=3)
+  ```
+- Unten zeigt eine Statusleiste kurze Hinweise an ("Statusbar" = Leiste am Fensterrand).
 

@@ -20,3 +20,4 @@ Alias-Info-Modul mit realen Inhalten erstellt
 - Farbschema der GUI konfigurierbar gemacht (vier Themes via ORGANIZER_THEME).
 - Mobile Ansicht verbessert: Sidebar blendet sich bei kleiner Fensterbreite automatisch aus
 - Theme-Auswahl wird gespeichert (settings.json)
+- Abbruch- und Retry-Hooks für asynchrone Aufgaben integriert
